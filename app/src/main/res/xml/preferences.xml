@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+<!--     <PreferenceCategory android:title="MySettings" /> -->
+
+    <Preference
+        android:key="sync"
+        android:selectable="true"
+        android:summary="@string/pref_sync_data_summary"
+        android:title="@string/pref_sync_data" />
+    
+    <Preference
+        android:key="complete_camp"
+        android:selectable="true"
+        android:summary="@string/pref_complete_camp_summary"
+        android:title="@string/pref_complete_camp" />
+    
+    <!--<Preference
+        android:key="aboutUs"
+        android:selectable="true"
+        android:title="@string/about_us" />-->
+</PreferenceScreen>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:weightSum="7"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/txtDate"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:background="@drawable/table_bg_content_boarder"
+        android:text="Date"
+        android:textSize="@dimen/text_size_large" />
+
+    <TextView
+        android:id="@+id/txtphc"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:layout_weight="1"
+        android:background="@drawable/table_bg_content_boarder"
+        android:text="PHC"
+        android:textSize="@dimen/text_size_large" />
+
+    <TextView
+        android:id="@+id/txtsubcentre"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:layout_weight="1"
+        android:background="@drawable/table_bg_content_boarder"
+        android:text="Sub-center"
+        android:textSize="@dimen/text_size_large" />
+
+    <TextView
+        android:id="@+id/txtvillage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:layout_weight="1"
+        android:background="@drawable/table_bg_content_boarder"
+        android:text="Village"
+        android:textSize="@dimen/text_size_large" />
+
+    <TextView
+        android:id="@+id/txtPada"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:layout_weight="1"
+        android:background="@drawable/table_bg_content_boarder"
+        android:text="Pada"
+        android:textSize="@dimen/text_size_large" />
+
+    <TextView
+        android:id="@+id/txthouseholdcount"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:layout_weight="1"
+        android:background="@drawable/table_bg_content_boarder"
+        android:text="Households"
+        android:textSize="@dimen/text_size_large"/>
+
+    <TextView
+        android:id="@+id/txtpopulationcount"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:layout_weight="1"
+        android:background="@drawable/table_bg_content_boarder"
+        android:text="Population"
+        android:textSize="@dimen/text_size_large"/>
+
+</LinearLayout>

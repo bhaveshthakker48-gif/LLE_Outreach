@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_marginBottom="4dp"
+    android:background="@color/white"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:id="@+id/txtDateofdataenter"
+        android:layout_alignParentLeft="true"
+        android:textColor="@color/black"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        style="@style/text_view_style"
+        android:text="Date :- 21-22-2020"
+        android:layout_height="wrap_content">
+    </TextView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:id="@+id/txthouseno"
+        android:layout_alignParentRight="true"
+        android:textColor="@color/black"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        style="@style/text_view_style"
+        android:text="House No :- 21-22-2020"
+        android:layout_height="wrap_content">
+    </TextView>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:id="@+id/llmain"
+        android:layout_below="@+id/txtDateofdataenter"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="match_parent"
+                style="@style/text_view_style"
+                android:textColor="@color/black"
+                android:id="@+id/nameagegender"
+                android:layout_height="wrap_content">
+            </TextView>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="match_parent"
+                style="@style/text_view_style"
+                android:textColor="@color/black"
+                android:id="@+id/phcsubcentpadavillage"
+                android:layout_height="wrap_content">
+            </TextView>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_margin="10dp"
+                android:id="@+id/img_view"
+                android:src="@drawable/viewresult"
+                android:layout_height="wrap_content">
+            </ImageView>
+
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_margin="10dp"
+                android:id="@+id/img_Editdata"
+                android:src="@drawable/edit"
+                android:layout_height="wrap_content">
+            </ImageView>
+
+        </LinearLayout>
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:background="@color/colorPrimary"
+        android:layout_below="@+id/llmain"
+        android:layout_height="2dp">
+
+    </View>
+</RelativeLayout>

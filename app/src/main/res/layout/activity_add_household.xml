@@ -1,0 +1,688 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.activity.AddHouseholdActivity">
+
+    <!-- Toolbar -->
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
+
+    <!-- Scrollable Form -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/llho_no"
+                    style="@style/liner_ll">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="1">
+
+                        <EditText
+                            android:id="@+id/edt_householdNo"
+                            style="@style/edit_text_style"
+                            android:background="@drawable/bg_blackboarder"
+                            android:hint="House hold No *"
+                            android:paddingLeft="5dp"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="5dp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight="1"
+                        android:visibility="invisible">
+
+                        <EditText
+                            android:id="@+id/edtTotalMemberCount"
+                            style="@style/edit_text_style"
+                            android:background="@drawable/bg_blackboarder"
+                            android:hint="Total Member"
+                            android:paddingLeft="5dp"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="5dp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/layout_bg"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scrollbars="vertical" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <LinearLayout style="@style/liner_ll">
+
+                        <Spinner
+                            android:id="@+id/spinner_membertype"
+                            style="@style/spinner_style"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginRight="5dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/spinner_boarder"
+                            android:padding="5dp" />
+
+
+                        <Spinner
+                            android:id="@+id/spinner_relationship"
+                            style="@style/spinner_style"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginRight="5dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/spinner_boarder"
+                            android:padding="5dp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llothers"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <LinearLayout
+                    style="@style/liner_ll"
+                    android:weightSum="2">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="1"
+                        android:visibility="invisible">
+
+                        <EditText
+                            style="@style/edit_text_style"
+                            android:background="@drawable/bg_blackboarder"
+                            android:hint="Last Name *"
+                            android:paddingLeft="5dp"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="5dp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="1">
+
+                        <EditText
+                            android:id="@+id/edtothersdetails"
+                            style="@style/edit_text_style"
+                            android:background="@drawable/bg_blackboarder"
+                            android:hint="Relation details"
+                            android:paddingLeft="5dp"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="5dp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <info.hoang8f.android.segmented.SegmentedGroup
+                android:id="@+id/sgTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="5dp"
+                android:orientation="horizontal"
+                app:sc_border_width="2dp"
+                app:sc_checked_text_color="@color/white"
+                app:sc_corner_radius="3dp"
+                app:sc_tint_color="@color/colorPrimary">
+
+                <RadioButton
+                    android:id="@+id/rbMr"
+                    style="@style/RadioButton1"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:text="Mr" />
+
+                <RadioButton
+                    android:id="@+id/rbMrs"
+                    style="@style/RadioButton1"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:text="Mrs" />
+
+                <RadioButton
+                    android:id="@+id/rbMaster"
+                    style="@style/RadioButton1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Master" />
+
+                <RadioButton
+                    android:id="@+id/rbMs"
+                    style="@style/RadioButton1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ms" />
+
+            </info.hoang8f.android.segmented.SegmentedGroup>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout style="@style/liner_ll">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="5dp"
+                            android:layout_weight="1">
+
+                            <EditText
+                                android:id="@+id/edtFirstName"
+                                style="@style/edit_text_style"
+                                android:background="@drawable/bg_blackboarder"
+                                android:hint="First Name *"
+                                android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ "
+                                android:inputType="textCapWords|textPersonName"
+                                android:singleLine="true"
+                                android:paddingLeft="5dp"
+                                android:paddingTop="10dp"
+                                android:paddingBottom="5dp"
+                                 />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_weight="1">
+
+                            <EditText
+                                android:id="@+id/edtMiddleName"
+                                style="@style/edit_text_style"
+                                android:background="@drawable/bg_blackboarder"
+                                android:hint="Middle Name *"
+                                android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ "
+                                android:inputType="textCapWords|textPersonName"
+                                android:singleLine="true"
+                                android:paddingLeft="5dp"
+                                android:paddingTop="10dp"
+                                android:paddingBottom="5dp" />
+                        </com.google.android.material.textfield.TextInputLayout>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+                        <!-- Last Name Field -->
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="5dp"
+                            android:layout_weight="1">
+
+                            <EditText
+                                android:id="@+id/edtlastname"
+                                style="@style/edit_text_style"
+                                android:background="@drawable/bg_blackboarder"
+                                android:hint="Last Name *"
+                                android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ "
+                                android:inputType="textCapWords|textPersonName"
+                                android:singleLine="true"
+                                android:paddingStart="5dp"
+                                android:paddingTop="10dp"
+                                android:paddingBottom="5dp" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <!-- Gender Spinner -->
+                        <Spinner
+                            android:id="@+id/spinner_gender"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="5dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/spinner_boarder"
+                            android:paddingStart="5dp"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="5dp" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        style="@style/liner_ll"
+                        android:weightSum="3">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="5dp"
+                            android:layout_weight="1">
+
+                            <EditText
+                                android:id="@+id/edtdob"
+                                style="@style/edit_text_style"
+                                android:background="@drawable/bg_blackboarder"
+                                android:clickable="true"
+                                android:focusable="false"
+                                android:hint="DOB  *"
+                                android:inputType="none"
+                                android:paddingLeft="5dp"
+                                android:paddingTop="10dp"
+                                android:paddingBottom="5dp" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_weight="1">
+
+                            <EditText
+                                android:id="@+id/edtage"
+                                style="@style/edit_text_style"
+                                android:background="@drawable/bg_blackboarder"
+                                android:hint="Age *"
+                                android:inputType="number"
+                                android:paddingLeft="5dp"
+                                android:paddingTop="10dp"
+                                android:paddingBottom="5dp" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <Spinner
+                            android:id="@+id/houshold_spnAgeUnit"
+                            style="@style/spinner_style"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/spinner_boarder"
+                            android:padding="5dp" />
+
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    style="@style/liner_ll"
+                    android:layout_margin="8dp">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="1">
+
+                        <EditText
+                            android:id="@+id/edtpincode"
+                            style="@style/edit_text_style"
+                            android:background="@drawable/bg_blackboarder"
+                            android:hint="Pincode *"
+                            android:inputType="number"
+                            android:maxLength="6"
+                            android:paddingLeft="5dp"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="5dp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight="1">
+
+                        <EditText
+                            android:id="@+id/edtmobileno"
+                            style="@style/edit_text_style"
+                            android:background="@drawable/bg_blackboarder"
+                            android:hint="Mobile no *"
+                            android:inputType="number"
+                            android:maxLength="10"
+                            android:paddingLeft="5dp"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="5dp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    style="@style/liner_ll"
+                    android:layout_margin="8dp">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="1">
+
+                        <EditText
+                            android:id="@+id/edtstreetname"
+                            style="@style/edit_text_style"
+                            android:background="@drawable/bg_blackboarder"
+                            android:hint="Street Name"
+                            android:paddingLeft="5dp"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="5dp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight="1">
+
+                        <EditText
+                            android:id="@+id/edtresidenceno"
+                            style="@style/edit_text_style"
+                            android:background="@drawable/bg_blackboarder"
+                            android:hint="Residence Mobile no"
+                            android:inputType="number"
+                            android:maxLength="10"
+                            android:paddingLeft="5dp"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="5dp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    style="@style/liner_ll"
+                    android:layout_margin="8dp">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="1">
+
+                        <EditText
+                            android:id="@+id/edtaadharno"
+                            style="@style/edit_text_style"
+                            android:background="@drawable/bg_blackboarder"
+                            android:hint="Aadhar No"
+                            android:inputType="number"
+                            android:maxLength="12"
+                            android:paddingLeft="5dp"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="5dp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight="1">
+
+                        <EditText
+                            android:id="@+id/edtvoterid"
+                            style="@style/edit_text_style"
+                            android:background="@drawable/bg_blackboarder"
+                            android:hint="Voter id"
+                            android:paddingLeft="5dp"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="5dp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    style="@style/liner_ll"
+                    android:layout_margin="8dp">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="1">
+
+                        <EditText
+                            android:id="@+id/edtemailid"
+                            style="@style/edit_text_style"
+                            android:background="@drawable/bg_blackboarder"
+                            android:hint="Email Id"
+                            android:inputType="textEmailAddress"
+                            android:paddingLeft="5dp"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="5dp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight="1"
+                        android:visibility="invisible">
+
+                        <EditText
+                            android:id="@+id/edtreferby"
+                            style="@style/edit_text_style"
+                            android:background="@drawable/bg_blackboarder"
+                            android:hint="Referredby"
+                            android:paddingLeft="5dp"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="5dp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    style="@style/liner_ll"
+                    android:layout_gravity="center"
+                    android:layout_margin="8dp">
+
+                    <!--<org.impactindia.llemeddocket.view.MultiSelectionSpinner
+                        android:id="@+id/mulSpnAssignTag"
+                        style="@style/spinner_style"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />-->
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight="1"
+                        android:visibility="invisible">
+
+                        <EditText
+                            style="@style/edit_text_style"
+                            android:background="@drawable/bg_blackboarder"
+                            android:hint="Referredby"
+                            android:paddingLeft="5dp"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="5dp"
+                            android:visibility="invisible" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btnAdd_memberdata"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/bg_buttonboarder"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="Submit"
+                    android:textAllCaps="false"></Button>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="3dp"
+                android:background="@color/colorPrimary"></View>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btnAddPadaDetails"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/bg_buttonboarder"
+                    android:text="Add Pada details"
+                    android:textAllCaps="false"></Button>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

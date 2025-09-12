@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="gender">
+        <item>Select Gender</item>
+        <item>Male</item>
+        <item>Female</item>
+        <item>Other</item>
+    </string-array>
+
+    <string-array name="age_unit">
+        <item>Years</item>
+        <item>Months</item>
+        <item>Weeks</item>
+        <item>Days</item>
+    </string-array>
+
+    <string-array name="test_unit">
+        <item>Select</item>
+        <item>Positive</item>
+        <item>Negative</item>
+    </string-array>
+    
+    <string-array name="near_vision">
+        <item>Select</item>
+        <item>N5</item>
+        <item>N6</item>
+        <item>N8</item>
+        <item>N10</item>
+        <item>N12</item>
+        <item>N14</item>
+        <item>N18</item>
+        <item>N24</item>
+        <item>N36</item>
+        <item>N48</item>
+    </string-array>
+    
+    <string-array name="distance_vision">
+        <item>Select</item>
+        <item>6/9.5</item>
+        <item>6/7.5</item>
+        <item>6/6</item>
+        <item>6/60</item>
+        <item>6/48</item>
+        <item>6/38</item>
+        <item>6/30</item>
+        <item>6/24</item>
+        <item>6/19</item>
+        <item>6/15</item>
+        <item>6/12</item>
+        <item>Counting Fingers</item>
+        <item>Hand Motion</item>
+        <item>Light Perception</item>
+        <item>No Light Perception </item>
+    </string-array>
+    
+    
+    
+    <string-array name="diabetes">
+        <item>Select</item>
+        <item>Yes</item>
+        <item>No</item>
+        <item>Don’t Know</item>
+    </string-array>
+    
+    <string-array name="hypertension">
+        <item>Select</item>
+        <item>Yes</item>
+        <item>No</item>
+        <item>Don’t Know</item>
+    </string-array>
+
+    <string-array name="all_inone">
+        <item>Select</item>
+        <item>Yes</item>
+        <item>No</item>
+    </string-array>
+
+    <string-array name="all_inone_new">
+        <item>Select</item>
+        <item>Yes</item>
+        <item>No</item>
+        <item>Don’t Know</item>
+    </string-array>
+
+    <string-array name="cancer">
+        <item>Select</item>
+        <item>Oral</item>
+        <item>Others</item>
+        <item>No</item>
+    </string-array>
+    
+    <string-array name="congital_abnormal">
+        <item>Select</item>
+        <item>Cleft Lip</item>
+        <item>Orthopaedic Deformities</item>
+        <item>Heart Defects</item>
+        <item>No Anamoly</item>
+        <item>Others</item>
+    </string-array>
+
+    <string-array name="ear_problm">
+        <item>Select</item>
+        <item>Ear Discharge</item>
+        <item>Ear Pain</item>
+        <item>Hearing Loss</item>
+        <item>Normal</item>
+        <item>Other</item>
+    </string-array>
+
+    <string-array name="tobacco">
+        <item>Select</item>
+        <item>Yes</item>
+        <item>No</item>
+        <item>Past User</item>
+    </string-array>
+
+    <string-array name="smoker">
+        <item>Select</item>
+        <item>Yes</item>
+        <item>No</item>
+        <item>Ex-smoker</item>
+    </string-array>
+    
+    <string-array name="alchohol">
+        <item>Select</item>
+        <item>Yes</item>
+        <item>No</item>
+        <item>Past User</item>
+    </string-array>
+
+
+    <string-array name="relationship">
+        <item>Select Relationship</item>
+        <item>Husband</item>
+        <item>Wife</item>
+        <item>Son</item>
+        <item>Daughter</item>
+        <item>Daughter-in-law</item>
+        <item>Son-in-law</item>
+        <item>Father</item>
+        <item>Mother</item>
+        <item>Grandfather</item>
+        <item>Grandson</item>
+        <item>Granddaughter</item>
+        <item>Grandmother</item>
+        <item>Maternal Uncle</item>
+        <item>Maternal Aunt</item>
+        <item>Paternal Uncle</item>
+        <item>Cousin Brother</item>
+        <item>Cousin Sister</item>
+        <item>Other</item>
+    </string-array>
+
+    <string-array name="member">
+        <item>Select Member type</item>
+        <item>Head of family</item>
+        <item>Family Member</item>
+    </string-array>
+    
+</resources>

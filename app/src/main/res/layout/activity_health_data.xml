@@ -1,0 +1,574 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.activity.HealthDataActivity">
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_below="@+id/toolbar"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="match_parent">
+
+
+              <LinearLayout
+               android:layout_width="match_parent"
+               android:orientation="horizontal"
+               android:layout_margin="8dp"
+               android:weightSum="3"
+               android:layout_height="wrap_content">
+
+                   <TextView
+                       android:layout_width="match_parent"
+                       style="@style/text_view_style"
+                       android:text="Height *"
+                       android:layout_gravity="center_vertical"
+                       android:layout_weight="1"
+                       android:layout_height="wrap_content">
+                   </TextView>
+
+
+
+                   <LinearLayout
+                       android:layout_width="match_parent"
+                       android:orientation="horizontal"
+                       android:layout_weight="1"
+                       android:layout_height="wrap_content">
+
+                       <EditText
+                           android:layout_width="60dp"
+                           android:id="@+id/edtft"
+                           style="@style/edit_text_style"
+                           android:maxLength="2"
+                           android:inputType="number"
+                           android:layout_height="wrap_content">
+                       </EditText>
+                       <TextView
+                           android:layout_width="wrap_content"
+                           android:text="ft"
+                           style="@style/text_view_style"
+                           android:layout_height="wrap_content">
+                       </TextView>
+
+                   </LinearLayout>
+
+                   <LinearLayout
+                       android:layout_width="match_parent"
+                       android:orientation="horizontal"
+                       android:layout_weight="1"
+                       android:layout_height="wrap_content">
+
+                       <EditText
+                           android:layout_width="60dp"
+                           android:id="@+id/edtinches"
+                           android:maxLength="2"
+                           style="@style/edit_text_style"
+                           android:inputType="number"
+                           android:layout_height="wrap_content">
+                       </EditText>
+                       <TextView
+                           android:layout_width="wrap_content"
+                           android:text="inches"
+                           style="@style/text_view_style"
+                           android:layout_height="wrap_content">
+                       </TextView>
+
+                   </LinearLayout>
+
+
+           </LinearLayout>
+
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:orientation="horizontal"
+               android:weightSum="2"
+               android:layout_margin="8dp"
+               android:layout_height="wrap_content">
+
+               <TextView
+                   android:layout_width="match_parent"
+                   style="@style/text_view_style"
+                   android:text="Weight *"
+                   android:layout_gravity="center_vertical"
+                   android:layout_weight="1"
+                   android:layout_height="wrap_content">
+               </TextView>
+
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:orientation="horizontal"
+                   android:layout_weight="1"
+                   android:layout_height="wrap_content">
+
+                   <EditText
+                       android:layout_width="50dp"
+                       android:id="@+id/edtweight"
+                       android:inputType="number"
+                       android:maxLength="3"
+                       style="@style/edit_text_style"
+                       android:layout_height="wrap_content">
+                   </EditText>
+
+                   <TextView
+                       android:layout_width="wrap_content"
+                       android:text="Kgs"
+                       style="@style/text_view_style"
+                       android:layout_height="wrap_content">
+                   </TextView>
+
+               </LinearLayout>
+
+
+           </LinearLayout>
+
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:orientation="horizontal"
+               android:weightSum="2"
+               android:layout_margin="8dp"
+               android:layout_height="wrap_content">
+
+               <TextView
+                   android:layout_width="match_parent"
+                   style="@style/text_view_style"
+                   android:text="BMI"
+                   android:layout_gravity="center_vertical"
+                   android:layout_weight="1"
+                   android:layout_height="wrap_content">
+               </TextView>
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:orientation="vertical"
+                   android:layout_weight="1"
+                   android:weightSum="2"
+                   android:layout_height="wrap_content">
+
+                   <TextView
+                       android:layout_width="match_parent"
+                       android:id="@+id/edtbmi"
+                       android:maxLength="4"
+                       android:textColor="@color/black"
+                       style="@style/text_view_style"
+                       android:layout_weight="1"
+                       android:layout_height="wrap_content">
+                   </TextView>
+
+                   <TextView
+                       android:layout_width="match_parent"
+                       android:id="@+id/edtbmiinterpretation"
+                       android:textColor="@color/black"
+                       style="@style/text_view_style"
+                       android:layout_weight="1"
+                       android:layout_height="wrap_content">
+                   </TextView>
+
+               </LinearLayout>
+
+           </LinearLayout>
+
+
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:orientation="horizontal"
+               android:weightSum="2"
+               android:layout_margin="8dp"
+               android:layout_height="wrap_content">
+
+               <TextView
+                   android:layout_width="match_parent"
+                   style="@style/text_view_style"
+                   android:text="Pulse *"
+                   android:layout_gravity="center_vertical"
+                   android:layout_weight="1"
+                   android:layout_height="wrap_content">
+               </TextView>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:layout_width="60dp"
+                        android:id="@+id/edtpulse"
+                        android:inputType="number"
+                        style="@style/text_view_style"
+                        android:layout_height="wrap_content">
+                    </EditText>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        style="@style/text_view_style"
+                        android:text="/ minute"
+                        android:layout_height="wrap_content">
+                    </TextView>
+                </LinearLayout>
+           </LinearLayout>
+
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_margin="8dp"
+               android:weightSum="2"
+               android:layout_height="wrap_content">
+
+               <TextView
+                   android:layout_width="match_parent"
+                   style="@style/text_view_style"
+                   android:text="Oxygen Saturation "
+                   android:layout_gravity="center_vertical"
+                   android:layout_weight="1"
+                   android:layout_height="wrap_content">
+               </TextView>
+
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_weight="1"
+                   android:orientation="horizontal"
+                   android:layout_height="wrap_content">
+                   <EditText
+                       android:layout_width="60dp"
+                       android:inputType="number"
+                       android:id="@+id/edto2saturation"
+                       android:layout_height="wrap_content">
+                   </EditText>
+
+                   <TextView
+                       android:layout_width="wrap_content"
+                       android:text="%"
+                       android:layout_height="wrap_content"></TextView>
+               </LinearLayout>
+           </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                android:layout_margin="8dp"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    style="@style/text_view_style"
+                    android:text="Blood Sugar *"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content">
+                </TextView>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:orientation="horizontal"
+                        android:layout_height="wrap_content">
+                        <EditText
+                            android:layout_width="50dp"
+                            android:imeOptions="actionDone"
+                            android:inputType="numberDecimal"
+                            android:maxLength="6"
+                            style="@style/edit_text_style"
+                            android:id="@+id/edtbloodsugar"
+                            android:layout_height="wrap_content">
+                        </EditText>
+                        <TextView
+                            android:layout_width="match_parent"
+                            style="@style/text_view_style"
+                            android:layout_marginLeft="5dp"
+                            android:textColor="@color/black"
+                            android:id="@+id/txtbloodsugar_interpretation"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content">
+                        </TextView>
+                    </LinearLayout>
+
+                    <CheckBox
+                        android:id="@+id/userrefused"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Patient refused"
+                        />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                android:layout_margin="8dp"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    style="@style/text_view_style"
+                    android:text="Blood Pressure *"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1.2"
+                    android:layout_height="wrap_content">
+                </TextView>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:layout_weight="0.8"
+                    android:weightSum="2"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:orientation="horizontal"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:layout_width="50dp"
+                            android:id="@+id/edtSys"
+                            style="@style/edit_text_style"
+                            android:hint="Sys"
+                            android:maxLength="3"
+                            android:imeOptions="actionDone"
+                            android:inputType="number"
+                            android:layout_height="wrap_content">
+                        </EditText>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:text="/"
+                            android:layout_height="wrap_content">
+                        </TextView>
+
+                        <EditText
+                            android:layout_width="50dp"
+                            android:id="@+id/edtDias"
+                            style="@style/edit_text_style"
+                            android:hint="Dias"
+                            android:maxLength="3"
+                            android:imeOptions="actionDone"
+                            android:inputType="number"
+                            android:layout_height="wrap_content">
+                        </EditText>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:text="mm Hg"
+                            android:layout_height="wrap_content">
+                        </TextView>
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        style="@style/text_view_style"
+                        android:layout_weight="1"
+                        android:id="@+id/bloodpressure_interpretation"
+                        android:layout_height="wrap_content">
+                    </TextView>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    style="@style/text_view_style"
+                    android:text="Visual Acuity "
+                    android:layout_gravity="center_vertical"
+                    android:layout_height="wrap_content">
+                </TextView>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content">
+
+                     <LinearLayout
+                            android:layout_width="match_parent"
+                            android:orientation="horizontal"
+                            android:layout_marginLeft="10dp"
+                            android:layout_weight="3"
+                            android:layout_height="wrap_content">
+
+                         <TextView
+                             android:layout_width="match_parent"
+                             android:text="Right Eye "
+                             android:layout_weight="1"
+                             android:visibility="invisible"
+                             android:layout_height="wrap_content">
+                         </TextView>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:text="Near"
+                                android:gravity="center"
+                                android:layout_weight="1"
+                                style="@style/text_view_style"
+                                android:layout_height="wrap_content">
+                            </TextView>
+
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:text="Distance"
+                                android:gravity="center"
+                                android:layout_weight="1"
+                                style="@style/text_view_style"
+                                android:layout_height="wrap_content">
+                            </TextView>
+                        </LinearLayout>
+
+                         <LinearLayout
+                             android:layout_width="match_parent"
+                             android:orientation="horizontal"
+                             android:layout_marginTop="10dp"
+                             android:weightSum="3"
+                             android:layout_height="wrap_content">
+
+                             <TextView
+                                 android:layout_width="match_parent"
+                                 android:text="Right Eye "
+                                 android:layout_weight="1.2"
+                                 android:layout_height="wrap_content">
+                             </TextView>
+
+                             <Spinner
+                                 android:layout_width="match_parent"
+                                 style="@style/spinner_style"
+                                 android:layout_weight="0.8"
+                                 android:id="@+id/spnreyenear"
+                                 android:layout_height="wrap_content">
+                             </Spinner>
+
+                             <Spinner
+                                 android:layout_width="match_parent"
+                                 style="@style/spinner_style"
+                                 android:layout_weight="0.8"
+                                 android:id="@+id/spnrdistance"
+                                 android:layout_height="wrap_content">
+                             </Spinner>
+
+                         </LinearLayout>
+
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        android:id="@+id/txtRightEyeInterp"
+                        android:layout_height="wrap_content">
+                    </TextView>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="10dp"
+                        android:weightSum="3"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:text="Left Eye "
+                            android:layout_weight="1.2"
+                            android:layout_height="wrap_content">
+                        </TextView>
+
+                        <Spinner
+                            android:layout_width="match_parent"
+                            style="@style/spinner_style"
+                            android:layout_weight="0.8"
+                            android:id="@+id/spnleyenear"
+                            android:layout_height="wrap_content">
+                        </Spinner>
+
+                        <Spinner
+                            android:layout_width="match_parent"
+                            style="@style/spinner_style"
+                            android:layout_weight="0.8"
+                            android:id="@+id/spnleyedistance"
+                            android:layout_height="wrap_content">
+                        </Spinner>
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="10dp"
+                        android:id="@+id/txtLeftEyeInterp"
+                        android:layout_height="wrap_content">
+                    </TextView>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:gravity="center"
+                android:text="Add "
+                android:id="@+id/btnAddhelathdata"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center"
+                android:background="@drawable/bg_buttonboarder"
+                android:layout_height="wrap_content"
+                ></Button>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:visibility="invisible"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:id="@+id/reyenearvalue"
+                    android:layout_height="wrap_content">
+                </TextView>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:id="@+id/reyedistancevalue"
+                    android:layout_height="wrap_content">
+                </TextView>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:id="@+id/leyenearvalue"
+                    android:layout_height="wrap_content">
+                </TextView>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:id="@+id/leyedistancevalue"
+                    android:layout_height="wrap_content">
+                </TextView>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>
+
+

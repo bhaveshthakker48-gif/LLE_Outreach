@@ -1,0 +1,130 @@
+<resources>
+    <string name="app_name">LLE Outreach</string>
+
+    <!-- LogIn Screen -->
+    <string name="lbl_prompt_user_name">User Name</string>
+    <string name="lbl_prompt_pwd">Password</string>
+    <string name="btn_lbl_sign_in">Sign In</string>
+    <string name="user_name_req_err_msg">Please enter username</string>
+    <string name="pwd_req_err_msg">Please Enter Password</string>
+    <string name="login_err_msg">Error occurred while login, please check the values entered</string>
+    <string name="invalid_user_err_msg">Invalid User</string>
+    <string name="user_inactive_err_msg">User is InActive</string>
+
+    <!-- Patient Registration -->
+    <string name="lbl_patient_registration">Patient Registration</string>
+    <string name="date_invalid_err_msg">Please select proper date.</string>
+    <string name="first_name_req_err_msg">First Name is required</string>
+    <string name="name_invalid_err_msg">Pls. enter correct Name.</string>
+    <string name="last_name_req_err_msg">Last Name is required</string>
+    <string name="select_gender_hint">Pls. Select Gender</string>
+    <string name="dob_req_alert_msg">Please specify Date Of Birth</string>
+    <string name="email_invalid_alert">Please enter valid Emaid Id, Email id format should be (abc@abc.com)</string>
+    <string name="locality_req_err_msg">Pls. enter Locality/Area/Pada</string>
+    <string name="city_town_village_req_err_msg">Pls. enter City/Town/Village</string>
+    <string name="taluka_req_err_msg">Pls. enter Taluka</string>
+    <string name="district_req_err_msg">Pls. enter District</string>
+    <string name="country_req_err_msg">Pls. enter Country</string>
+    <string name="aadhar_invalid_alert">Pls. enter correct Aadhar No.</string>
+    <string name="dialg_title_add_photo">Add Photo!</string>
+    <string name="img_gallery_title">Pick Image</string>
+
+    <!-- Patient Registration Pdf -->
+    <string name="register_next_patient_desc">Want to register a next patient?</string>
+    <string name="btn_lbl_yes">Yes</string>
+    <string name="btn_lbl_no">No</string>
+    <string name="sd_card_unavailable">SD Card Not detected, Please insert the SD Card</string>
+    <string name="pdf_reader_not_installed">Pdf viewer required to view prescription, please install PDF viewer app</string>
+    <string name="btn_lbl_install_now">Install now</string>
+    <string name="btn_lbl_install_later">Install later</string>
+
+    <!-- Permission Dialog -->
+    <string name="permission_diag_title">Permission Info</string>
+    <string name="req_storage_access_perms_msg">Give LLE MedDocket App permission to access storage, to store registration data.</string>
+    <string name="req_storage_access_perms_to_save_profile_photo_msg">Give LLE MedDocket App permission to access storage, to save profile photo.</string>
+    <string name="lbl_ok">OK</string>
+    <string name="btn_lbl_sync">Sync</string>
+    <string name="lbl_cancel">Cancel</string>
+
+    <!-- Sync -->
+    <string name="pref_sync_data">Sync Data</string>
+    <string name="pref_sync_data_summary">Starts Data Sync Process</string>
+    <string name="pref_dialog_title">Alert</string>
+    <string name="pref_dialog_start_sync_desc">This will start the Sync Process</string>
+    <string name="sync_prog_desc">Sync is in progress</string>
+    <string name="pref_sync_success_msg">Sync process completed successfully</string>
+    <string name="pref_sync_fail_msg">Sync process completed with errors</string>
+    <string name="pref_complete_camp">Complete camp</string>
+    <string name="pref_complete_camp_summary">This will completes the current active camp</string>
+    <string name="pref_dialog_complete_camp_desc">Are you sure, you want to complete this camp.\n\nThis will do an Autosync and remove all data from the device. Once camp has been completed you can\'t enter any new data for this camp.</string>
+    <string name="draw_over_other_app_perm_req_alert_msg">Draw over other apps permission required to confirm completion of sync process</string>
+
+    <!-- Settings -->
+    <string name="header_title_settings">Settings</string>
+
+    <!-- Camp Details -->
+    <string name="title_active_camp">Active Camp</string>
+    <string name="active_camp_starts_msg">You are registering patients for year %1$s for Camp No. %2$s at %3$s from %4$s to %5$s</string>
+    <string name="active_camp_ends_msg">Duration of %1$s camp completed. Do you want to continue entering data for this camp?</string>
+    <string name="no_active_camp_dialog_msg">Currently there is no active camp.</string>
+    <string name="btn_lbl_no_sync_complete">No, sync &amp; complete</string>
+
+    <!-- Patient List -->
+    <string name="title_my_patient_list">My Patient List</string>
+    <string name="title_camp_patient_list">Camp Patient List</string>
+    <string name="title_reg_no">RgNo</string>
+    <string name="title_name">Name</string>
+    <string name="title_tel">Phone No</string>
+    <string name="title_last_visit">Last Visit</string>
+    <string name="data_not_available_msg">Data Not Available</string>
+    <string name="menu_opt_search_by_name_or_number_hint">Search by reg. no, name, phone no</string>
+    <string name="title_formatted_count">Count %1$d</string>
+
+    <!-- Medical Details -->
+    <string name="title_medical_details">Medical Details</string>
+    <string name="lbl_date_of_examination">Date of examination</string>
+    <string name="lbl_diagnosis">Diagnosis</string>
+    <string name="lbl_visit_type">Visit Type</string>
+    <string name="chk_lbl_opd">OPD</string>
+    <string name="chk_lbl_surgery">Surgery</string>
+    <string name="lbl_weight">Weight</string>
+    <string name="lbl_blood_pressure">Blood Pressure</string>
+    <string name="lbl_hemoglobin">Hemoglobin</string>
+    <string name="lbl_bld_glucose_random">Blood Glucose - Random</string>
+    <string name="lbl_hiv">HIV</string>
+    <string name="lbl_hbsag">HBsAg</string>
+    <string name="lbl_final_tags">Final Tags</string>
+    <string name="lbl_select_tags">Select Tags</string>
+    <string name="lbl_systolic">Systolic</string>
+    <string name="lbl_diastolic">Diastolic</string>
+    <string name="lbl_units_mm_of_hg">mm of Hg</string>
+    <string name="lbl_units_mg_dl">mg/dL</string>
+    <string name="lbl_units_g_dl">g/dL</string>
+    <string name="lbl_units_kgs">kgs</string>
+    <string name="btn_lbl_submit">Submit</string>
+    <string name="data_added_successfully">Data added successfully</string>
+    <string name="submit_medical_details">Error occured while submitting medical details, please try after some time</string>
+    <string name="doe_req_err_msg">Pls. enter Date of examination</string>
+    <string name="weight_req_err_msg">Pls. enter weight</string>
+    <string name="blood_glucose_random_req_err_msg">Pls. enter Blood Glucose random</string>
+    <string name="systolic_bp_req_err_msg">Pls. enter Systolic blood pressure</string>
+    <string name="diastolic_bp_req_err_msg">Pls. enter Diastolic blood pressure</string>
+    <string name="colon_str">:</string>
+    <string name="hint_diag_separated_by_commas">Diagnosis separated by commas</string>
+    <string name="diagnosis_req_err_msg">Pls. enter Diagnosis separated by commas</string>
+    <string name="visit_type_req_err_msg">Pls. select visit type</string>
+    <string name="hemoglobin_req_err_msg">Pls. enter Hemoglobin</string>
+    <string name="hiv_test_result_req_err_msg">Pls. select result of HIV test</string>
+    <string name="hbsag_test_result_req_err_msg">Pls. select result of HBsAg test</string>
+    <string name="tags_req_err_msg">Pls. select Tags</string>
+    <string name="btn_lbl_add_new">Add New</string>
+
+    <!-- QR Code -->
+    <string name="title_scan_qr">Scan QR</string>
+    <string name="qr_code_scan">Scan QR Code</string>
+
+    <string name="dg">0123456789qwertzuiopasdfghjklyxcvbnm </string>
+
+    <!-- Network Error Message -->
+    <string name="network_unavailable_error_msg">Unable to connect. Please check that you are connected to the internet and try again.</string>
+</resources>

@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:fillViewport="true"
+    xmlns:tools="http://schemas.android.com/tools">
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent"
+        >
+
+        <Spinner
+            android:layout_width="wrap_content"
+            android:gravity="center"
+            style="@style/spinner_style"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/spinner_dailyworkreport"
+            android:layout_marginTop="@dimen/margintop"
+            android:layout_height="wrap_content">
+        </Spinner>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_marginTop="7dp"
+            android:orientation="horizontal"
+            android:weightSum="3"
+            android:layout_margin="8dp"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:orientation="vertical"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:text="From Date"
+                    style="@style/text_view_style"
+                    android:textStyle="bold"
+                    android:layout_height="wrap_content">
+                </TextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:id="@+id/txtbeforedate"
+                    style="@style/edit_text_style"
+                    android:textColor="@color/black"
+                    android:layout_height="wrap_content">
+                </TextView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:orientation="vertical"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:text="To Date"
+                    style="@style/text_view_style"
+                    android:textStyle="bold"
+                    android:layout_height="wrap_content">
+                </TextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:id="@+id/txtcurrentdate"
+                    style="@style/edit_text_style"
+                    android:textColor="@color/black"
+                    android:layout_height="wrap_content">
+                </TextView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:orientation="vertical"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:text="To Date"
+                    style="@style/text_view_style"
+                    android:textStyle="bold"
+                    android:visibility="invisible"
+                    android:layout_height="wrap_content">
+                </TextView>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:id="@+id/btnsubmitdate"
+                    android:padding="5dp"
+                    android:text="submit"
+                    android:textColor="@color/black"
+                    android:layout_height="wrap_content">
+                </Button>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_margin="5dp"
+            android:weightSum="2"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_weight="1"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:text="Total Households:"
+                    style="@style/text_view_style"
+                    android:textStyle="bold"
+                    android:layout_height="wrap_content">
+                </TextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:text="Count"
+                    android:layout_marginLeft="8dp"
+                    style="@style/text_view_style"
+                    android:id="@+id/txttotalhousholds"
+                    android:layout_height="wrap_content">
+                </TextView>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_weight="1"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:text="Total Population:"
+                    style="@style/text_view_style"
+                    android:textStyle="bold"
+                    android:layout_height="wrap_content">
+                </TextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:text="Count"
+                    android:id="@+id/txtTotalpopulationcount"
+                    android:layout_marginLeft="8dp"
+                    style="@style/text_view_style"
+                    android:layout_height="wrap_content">
+                </TextView>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_margin="7dp"
+            android:layout_height="wrap_content">
+
+        </LinearLayout>
+
+        <SearchView
+            android:id="@+id/searchView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:queryHint="Phc,Subcenter,Village,Pada"
+            android:iconifiedByDefault="true"
+
+            />
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:id="@+id/recycler_records"
+            android:layout_marginTop="10dp"
+            android:layout_height="500dp">
+        </androidx.recyclerview.widget.RecyclerView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="@color/black"
+            android:id="@+id/txtNorecord"
+            android:visibility="gone"
+            android:text="No Record Found"
+            android:layout_height="wrap_content">
+        </TextView>
+
+    </LinearLayout>
+    </ScrollView>
+</LinearLayout>

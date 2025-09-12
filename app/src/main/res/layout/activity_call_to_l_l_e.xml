@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.activity.CallToLLEActivity">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:fillViewport="true"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_margin="10dp"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:id="@+id/llvisualAc"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    style="@style/text_view_style"
+                    android:text="Visual Acuity"
+                    android:layout_gravity="center"
+                    android:layout_height="wrap_content">
+                </TextView>
+
+                <Spinner
+                    android:layout_width="match_parent"
+                    android:id="@+id/llevisualacuspinner"
+                    android:background="@drawable/spinner_boarder"
+                    android:layout_height="wrap_content">
+                </Spinner>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:id="@+id/llcata"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    style="@style/text_view_style"
+                    android:text="Cataract"
+                    android:layout_gravity="center"
+                    android:layout_height="wrap_content">
+                </TextView>
+
+                <Spinner
+                    android:layout_width="match_parent"
+                    android:id="@+id/llecataractspinner"
+                    android:background="@drawable/spinner_boarder"
+                    android:layout_height="wrap_content">
+                </Spinner>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:id="@+id/lleeplipsy"
+                android:layout_marginTop="10dp"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    style="@style/text_view_style"
+                    android:text="Epilepsy"
+                    android:layout_gravity="center"
+                    android:layout_height="wrap_content">
+                </TextView>
+
+                <Spinner
+                    android:layout_width="match_parent"
+                    android:id="@+id/lleEpilepsyspinner"
+                    android:background="@drawable/spinner_boarder"
+                    android:layout_height="wrap_content">
+                </Spinner>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:id="@+id/lloralprblm"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    style="@style/text_view_style"
+                    android:text="Dental Problems"
+                    android:layout_gravity="center"
+                    android:layout_height="wrap_content">
+                </TextView>
+
+                <Spinner
+                    android:layout_width="match_parent"
+                    android:id="@+id/lleoralspinner"
+                    android:background="@drawable/spinner_boarder"
+                    android:layout_height="wrap_content">
+                </Spinner>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:id="@+id/lle_congab"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    style="@style/text_view_style"
+                    android:text="Congenital Abnormalities"
+                    android:layout_gravity="center"
+                    android:layout_height="wrap_content">
+                </TextView>
+
+                <Spinner
+                    android:layout_width="match_parent"
+                    android:id="@+id/lleCongABspinner"
+                    android:background="@drawable/spinner_boarder"
+                    android:layout_height="wrap_content">
+                </Spinner>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:id="@+id/lle_cancer"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    style="@style/text_view_style"
+                    android:text="Oral Cancer"
+                    android:layout_gravity="center"
+                    android:layout_height="wrap_content">
+                </TextView>
+
+                <Spinner
+                    android:layout_width="match_parent"
+                    android:id="@+id/lleoralCancerspinner"
+                    android:background="@drawable/spinner_boarder"
+                    android:layout_height="wrap_content">
+                </Spinner>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:visibility="gone"
+                android:id="@+id/llehearing"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    style="@style/text_view_style"
+                    android:text="Hearing Defect"
+                    android:layout_gravity="center"
+                    android:layout_height="wrap_content">
+                </TextView>
+
+                <Spinner
+                    android:layout_width="match_parent"
+                    android:id="@+id/llehearingspinner"
+                    android:background="@drawable/spinner_boarder"
+                    android:layout_height="wrap_content">
+                </Spinner>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:id="@+id/lleEarprblm"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    style="@style/text_view_style"
+                    android:text="Ear Problems"
+                    android:layout_gravity="center"
+                    android:layout_height="wrap_content">
+                </TextView>
+
+                <Spinner
+                    android:layout_width="match_parent"
+                    android:id="@+id/lleearprblmspinner"
+                    android:background="@drawable/spinner_boarder"
+                    android:layout_height="wrap_content">
+                </Spinner>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:id="@+id/llgynace"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    style="@style/text_view_style"
+                    android:text="Gynaec/ Breast Problems"
+                    android:layout_gravity="center"
+                    android:layout_height="wrap_content">
+                </TextView>
+
+                <Spinner
+                    android:layout_width="match_parent"
+                    android:id="@+id/llegynaecspinner"
+                    android:background="@drawable/spinner_boarder"
+                    android:layout_height="wrap_content">
+                </Spinner>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                android:gravity="center"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/btnAddlldata"
+                    style="@style/button_style"
+                    android:layout_weight="1"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_gravity="center"
+                    android:textAllCaps="false"
+                    android:gravity="center"
+                    android:background="@drawable/bg_buttonboarder"
+                    android:text="Add same household member" />
+
+                <Button
+                    android:id="@+id/btnAddnewhousedata"
+                    style="@style/button_style"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_weight="1"
+                    android:textAllCaps="false"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:background="@drawable/bg_buttonboarder"
+                    android:text="Add new household member" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+
+
+</LinearLayout>

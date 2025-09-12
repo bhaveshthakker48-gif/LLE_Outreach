@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<info.hoang8f.android.segmented.SegmentedGroup
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:segmentedgroup="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/sgPages"
+    android:orientation="horizontal"
+    segmentedgroup:sc_tint_color="@color/colorPrimaryDark"
+    segmentedgroup:sc_checked_text_color="@color/white"
+    segmentedgroup:sc_border_width="1dp"
+    segmentedgroup:sc_corner_radius="1dp">
+
+    <RadioButton
+        android:id="@+id/rbMemberdetails"
+        style="@style/RadioButton1"
+        android:textSize="@dimen/text_size_large"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Member details"/>
+
+    <RadioButton
+        android:id="@+id/rbHealthdata"
+        style="@style/RadioButton1"
+        android:textSize="@dimen/text_size_large"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Health data"/>
+
+    <RadioButton
+        android:id="@+id/rbMedicalhistroy"
+        style="@style/RadioButton1"
+        android:textSize="@dimen/text_size_large"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Medical history"/>
+
+    <RadioButton
+        android:id="@+id/rbCallTolle"
+        style="@style/RadioButton1"
+        android:textSize="@dimen/text_size_large"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Call to LLE"/>
+
+</info.hoang8f.android.segmented.SegmentedGroup>

@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:id="@+id/recycler_diff_opd"
+        android:layout_height="match_parent">
+    </androidx.recyclerview.widget.RecyclerView>
+
+<!--<ScrollView
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_margin="8dp"
+        android:layout_height="match_parent"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    style="@style/text_view_style"
+                    android:text="PHC"
+                    android:gravity="center"
+                    android:layout_height="wrap_content">
+                </TextView>
+
+                <Spinner
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    style="@style/spinner_style"
+                    android:id="@+id/phc_spinner_opd"
+                    android:background="@drawable/spinner_boarder"
+                    android:layout_height="wrap_content">
+                </Spinner>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    style="@style/text_view_style"
+                    android:text="Sub-Center"
+                    android:gravity="center"
+                    android:layout_height="wrap_content">
+                </TextView>
+
+                <Spinner
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    style="@style/spinner_style"
+                    android:background="@drawable/spinner_boarder"
+                    android:id="@+id/subcenter_spinner_opd"
+                    android:layout_height="wrap_content">
+                </Spinner>
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    style="@style/text_view_style"
+                    android:text="Village"
+                    android:gravity="center"
+                    android:layout_height="wrap_content">
+                </TextView>
+
+                <Spinner
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/spinner_boarder"
+                    android:id="@+id/village_spinner_opd"
+                    style="@style/spinner_style"
+                    android:layout_height="wrap_content">
+                </Spinner>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    style="@style/text_view_style"
+                    android:text="Pada"
+                    android:gravity="center"
+                    android:layout_height="wrap_content">
+                </TextView>
+
+                <Spinner
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/spinner_boarder"
+                    style="@style/spinner_style"
+                    android:id="@+id/pada_spinner_opd"
+                    android:layout_height="wrap_content">
+                </Spinner>
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:weightSum="2"
+            android:layout_marginTop="10dp"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    style="@style/text_view_style"
+                    android:textStyle="bold"
+                    android:id="@+id/txttitle"
+                    android:layout_height="wrap_content">
+                </TextView>
+                <TextView
+                    android:layout_width="wrap_content"
+                    style="@style/text_view_style"
+                    android:textStyle="bold"
+                    android:text="0"
+                    android:id="@+id/txtcount"
+                    android:layout_height="wrap_content">
+                </TextView>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>-->
+
+</LinearLayout>

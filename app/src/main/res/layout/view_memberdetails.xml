@@ -1,0 +1,810 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/llmemberdata"
+
+    android:layout_height="match_parent">
+
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:padding="5dp"
+        android:shrinkColumns="*"
+        android:stretchColumns="2">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:layout_marginBottom="5dp">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                style="@style/text_view_style"
+                android:textStyle="bold"
+                android:layout_weight="1"
+                android:textSize="@dimen/textsizemiddium"
+                android:text="House hold No: "
+                android:layout_height="wrap_content">
+            </TextView>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                style="@style/text_view_style"
+                android:id="@+id/txt_householdno"
+                android:layout_gravity="center_horizontal"
+                android:textSize="@dimen/textsizemiddium"
+                android:layout_height="wrap_content">
+            </TextView>
+
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:layout_marginBottom="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                style="@style/text_view_style"
+                android:textSize="@dimen/textsizemiddium"
+                android:textStyle="bold"
+                android:layout_weight="1"
+                android:text="Member Type: "
+                android:layout_height="wrap_content">
+            </TextView>
+
+
+            <TextView
+                android:layout_width="0dp"
+                style="@style/text_view_style"
+                android:layout_weight="2"
+                android:layout_gravity="center_horizontal"
+                android:id="@+id/txt_Membertype"
+                android:textSize="@dimen/textsizemiddium"
+                android:layout_height="wrap_content">
+            </TextView>
+
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:visibility="gone"
+            android:layout_marginBottom="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                style="@style/text_view_style"
+                android:text="Title: "
+                android:textStyle="bold"
+                android:layout_weight="1"
+                android:textSize="@dimen/textsizemiddium"
+                android:layout_height="wrap_content">
+            </TextView>
+
+            <TextView
+                android:layout_width="0dp"
+                style="@style/text_view_style"
+                android:id="@+id/txt_Title"
+                android:layout_gravity="center_horizontal"
+                android:textSize="@dimen/textsizemiddium"
+                android:layout_weight="2"
+                android:layout_height="wrap_content">
+            </TextView>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:layout_marginBottom="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                style="@style/text_view_style"
+                android:textSize="@dimen/textsizemiddium"
+                android:textStyle="bold"
+                android:layout_weight="1"
+                android:text="Name: "
+                android:layout_height="wrap_content">
+            </TextView>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_gravity="center_horizontal"
+                style="@style/text_view_style"
+                android:id="@+id/txt_fmlname"
+                android:textSize="@dimen/textsizemiddium"
+                android:layout_height="wrap_content">
+            </TextView>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:layout_marginBottom="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                style="@style/text_view_style"
+                android:textSize="@dimen/textsizemiddium"
+                android:textStyle="bold"
+                android:text="Gender: "
+                android:layout_weight="1"
+                android:layout_height="wrap_content">
+            </TextView>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                style="@style/text_view_style"
+                android:id="@+id/txt_Gender"
+                android:layout_gravity="center_horizontal"
+                android:textSize="@dimen/textsizemiddium"
+                android:layout_height="wrap_content">
+            </TextView>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:layout_marginBottom="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                style="@style/text_view_style"
+                android:textSize="@dimen/textsizemiddium"
+                android:layout_weight="1"
+                android:textStyle="bold"
+                android:text="DOB: "
+                android:layout_height="wrap_content">
+            </TextView>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                style="@style/text_view_style"
+                android:layout_gravity="center_horizontal"
+                android:id="@+id/txt_dob"
+                android:textSize="@dimen/textsizemiddium"
+                android:layout_height="wrap_content">
+            </TextView>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:layout_marginBottom="5dp">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                style="@style/text_view_style"
+                android:textSize="@dimen/textsizemiddium"
+                android:text="Age: "
+                android:textStyle="bold"
+                android:layout_weight="1"
+                android:layout_height="wrap_content">
+            </TextView>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                style="@style/text_view_style"
+                android:id="@+id/txt_Age"
+                android:layout_gravity="center_horizontal"
+                android:textSize="@dimen/textsizemiddium"
+                android:layout_height="wrap_content">
+            </TextView>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:layout_marginBottom="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                style="@style/text_view_style"
+                android:textSize="@dimen/textsizemiddium"
+                android:textStyle="bold"
+                android:layout_weight="1"
+                android:text="Pincode: "
+                android:layout_height="wrap_content">
+            </TextView>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                style="@style/text_view_style"
+                android:id="@+id/txt_Pincode"
+                android:layout_gravity="center_horizontal"
+                android:textSize="@dimen/textsizemiddium"
+                android:layout_height="wrap_content">
+            </TextView>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:layout_marginBottom="5dp">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                style="@style/text_view_style"
+                android:textSize="@dimen/textsizemiddium"
+                android:textStyle="bold"
+                android:layout_weight="1"
+                android:text="Mobile no: "
+                android:layout_height="wrap_content">
+            </TextView>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_gravity="center_horizontal"
+                style="@style/text_view_style"
+                android:id="@+id/txt_mobileNo"
+                android:textSize="@dimen/textsizemiddium"
+                android:layout_height="wrap_content">
+            </TextView>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:layout_marginBottom="5dp">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                style="@style/text_view_style"
+                android:textSize="@dimen/textsizemiddium"
+                android:textStyle="bold"
+                android:text="Street Name: "
+                android:layout_weight="1"
+                android:layout_height="wrap_content">
+            </TextView>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_gravity="center_horizontal"
+                style="@style/text_view_style"
+                android:id="@+id/txt_StreetName"
+                android:textSize="@dimen/textsizemiddium"
+                android:layout_height="wrap_content">
+            </TextView>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:layout_marginBottom="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                style="@style/text_view_style"
+                android:textStyle="bold"
+                android:layout_weight="1"
+                android:text="Residence no: "
+                android:textSize="@dimen/textsizemiddium"
+                android:layout_height="wrap_content">
+            </TextView>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_gravity="center_horizontal"
+                style="@style/text_view_style"
+                android:id="@+id/txt_ResidNo"
+                android:textSize="@dimen/textsizemiddium"
+                android:layout_height="wrap_content">
+            </TextView>
+
+
+
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:layout_marginBottom="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                style="@style/text_view_style"
+                android:textSize="@dimen/textsizemiddium"
+                android:textStyle="bold"
+                android:layout_weight="1"
+                android:text="Aadhar No: "
+                android:layout_height="wrap_content">
+            </TextView>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_gravity="center_horizontal"
+                style="@style/text_view_style"
+                android:id="@+id/txt_AdharNo"
+                android:textSize="@dimen/textsizemiddium"
+                android:layout_height="wrap_content">
+            </TextView>
+
+
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:layout_marginBottom="5dp">
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                style="@style/text_view_style"
+                android:textSize="@dimen/textsizemiddium"
+                android:textStyle="bold"
+                android:text="Voter ID: "
+                android:layout_weight="1"
+                android:layout_height="wrap_content">
+            </TextView>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_gravity="center_horizontal"
+                style="@style/text_view_style"
+                android:id="@+id/txt_VoterId"
+                android:textSize="@dimen/textsizemiddium"
+                android:layout_height="wrap_content">
+            </TextView>
+
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:layout_marginBottom="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                style="@style/text_view_style"
+                android:textSize="@dimen/textsizemiddium"
+                android:textStyle="bold"
+                android:layout_weight="1"
+                android:text="Email ID: "
+                android:layout_height="wrap_content">
+            </TextView>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_gravity="center_horizontal"
+                android:textSize="@dimen/textsizemiddium"
+                style="@style/text_view_style"
+                android:id="@+id/txt_Email"
+                android:layout_height="wrap_content">
+            </TextView>
+
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:visibility="gone"
+            android:layout_marginBottom="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                style="@style/text_view_style"
+                android:textSize="@dimen/textsizemiddium"
+                android:textStyle="bold"
+                android:layout_weight="1"
+                android:text="Referred By: "
+                android:layout_height="wrap_content">
+            </TextView>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_gravity="center_horizontal"
+                style="@style/text_view_style"
+                android:id="@+id/txt_Refeby"
+                android:textSize="@dimen/textsizemiddium"
+                android:layout_height="wrap_content">
+            </TextView>
+
+        </TableRow>
+
+
+    </TableLayout>
+
+    <!--<LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/margintop"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            style="@style/text_view_style"
+            android:textStyle="bold"
+            android:textSize="@dimen/textsizemiddium"
+            android:text="Household No: "
+            android:layout_height="wrap_content">
+        </TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            style="@style/text_view_style"
+            android:id="@+id/txt_householdno"
+            android:textSize="@dimen/textsizemiddium"
+            android:layout_height="wrap_content">
+        </TextView>
+
+    </LinearLayout>-->
+
+   <!-- <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/margintop"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            style="@style/text_view_style"
+            android:textSize="@dimen/textsizemiddium"
+            android:textStyle="bold"
+            android:layout_weight="0"
+            android:text="Member Type: "
+            android:layout_height="wrap_content">
+        </TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            style="@style/text_view_style"
+            android:layout_weight="2"
+            android:id="@+id/txt_Membertype"
+            android:textSize="@dimen/textsizemiddium"
+            android:layout_height="wrap_content">
+        </TextView>
+
+    </LinearLayout>-->
+
+  <!--  <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+
+        android:layout_marginTop="@dimen/margintop"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            style="@style/text_view_style"
+            android:text="Title: "
+            android:textStyle="bold"
+            android:textSize="@dimen/textsizemiddium"
+            android:layout_height="wrap_content">
+        </TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            style="@style/text_view_style"
+            android:id="@+id/txt_Title"
+            android:textSize="@dimen/textsizemiddium"
+            android:layout_weight="2"
+            android:layout_height="wrap_content">
+        </TextView>
+
+    </LinearLayout>-->
+
+   <!-- <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/margintop"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            style="@style/text_view_style"
+            android:textSize="@dimen/textsizemiddium"
+            android:textStyle="bold"
+            android:text="Name: "
+            android:layout_height="wrap_content">
+        </TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            style="@style/text_view_style"
+            android:id="@+id/txt_fmlname"
+            android:textSize="@dimen/textsizemiddium"
+            android:layout_height="wrap_content">
+        </TextView>
+
+    </LinearLayout>-->
+
+   <!-- <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/margintop"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            style="@style/text_view_style"
+            android:textSize="@dimen/textsizemiddium"
+            android:textStyle="bold"
+            android:text="Gender: "
+            android:layout_height="wrap_content">
+        </TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            style="@style/text_view_style"
+            android:id="@+id/txt_Gender"
+            android:textSize="@dimen/textsizemiddium"
+            android:layout_height="wrap_content">
+        </TextView>
+
+    </LinearLayout>-->
+
+   <!-- <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/margintop"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            style="@style/text_view_style"
+            android:textSize="@dimen/textsizemiddium"
+            android:layout_weight="1"
+            android:textStyle="bold"
+            android:text="DOB: "
+            android:layout_height="wrap_content">
+        </TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            style="@style/text_view_style"
+            android:id="@+id/txt_dob"
+            android:textSize="@dimen/textsizemiddium"
+            android:layout_weight="1"
+            android:layout_height="wrap_content">
+        </TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            style="@style/text_view_style"
+            android:layout_marginLeft="10dp"
+            android:textSize="@dimen/textsizemiddium"
+            android:text="Age: "
+            android:textStyle="bold"
+            android:layout_weight="1"
+            android:layout_height="wrap_content">
+        </TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            style="@style/text_view_style"
+            android:id="@+id/txt_Age"
+            android:textSize="@dimen/textsizemiddium"
+            android:layout_weight="1"
+            android:layout_height="wrap_content">
+        </TextView>
+
+
+    </LinearLayout>-->
+
+  <!--  <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/margintop"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            style="@style/text_view_style"
+            android:textSize="@dimen/textsizemiddium"
+            android:textStyle="bold"
+            android:text="Pincode: "
+            android:layout_height="wrap_content">
+        </TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            style="@style/text_view_style"
+            android:id="@+id/txt_Pincode"
+            android:textSize="@dimen/textsizemiddium"
+            android:layout_height="wrap_content">
+        </TextView>
+
+    </LinearLayout>-->
+
+   <!-- <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/margintop"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            style="@style/text_view_style"
+            android:textSize="@dimen/textsizemiddium"
+            android:textStyle="bold"
+            android:text="Mobile no: "
+            android:layout_height="wrap_content">
+        </TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            style="@style/text_view_style"
+            android:id="@+id/txt_mobileNo"
+            android:textSize="@dimen/textsizemiddium"
+            android:layout_height="wrap_content">
+        </TextView>
+
+    </LinearLayout>-->
+
+  <!--  <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/margintop"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            style="@style/text_view_style"
+            android:textSize="@dimen/textsizemiddium"
+            android:textStyle="bold"
+            android:text="Street Name: "
+            android:layout_height="wrap_content">
+        </TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            style="@style/text_view_style"
+            android:id="@+id/txt_StreetName"
+            android:textSize="@dimen/textsizemiddium"
+            android:layout_height="wrap_content">
+        </TextView>
+
+    </LinearLayout>-->
+
+    <!--<LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/margintop"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            style="@style/text_view_style"
+            android:textStyle="bold"
+            android:text="Residence no: "
+            android:textSize="@dimen/textsizemiddium"
+            android:layout_height="wrap_content">
+        </TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            style="@style/text_view_style"
+            android:id="@+id/txt_ResidNo"
+            android:textSize="@dimen/textsizemiddium"
+            android:layout_height="wrap_content">
+        </TextView>
+
+    </LinearLayout>-->
+
+   <!-- <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/margintop"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            style="@style/text_view_style"
+            android:textSize="@dimen/textsizemiddium"
+            android:textStyle="bold"
+            android:text="Aadharno: "
+            android:layout_height="wrap_content">
+        </TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            style="@style/text_view_style"
+            android:id="@+id/txt_AdharNo"
+            android:textSize="@dimen/textsizemiddium"
+            android:layout_height="wrap_content">
+        </TextView>
+
+    </LinearLayout>-->
+
+   <!-- <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/margintop"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            style="@style/text_view_style"
+            android:textSize="@dimen/textsizemiddium"
+            android:textStyle="bold"
+            android:text="Voter ID: "
+            android:layout_height="wrap_content">
+        </TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            style="@style/text_view_style"
+            android:id="@+id/txt_VoterId"
+            android:textColor="@color/black"
+            android:textSize="@dimen/textsizemiddium"
+            android:layout_height="wrap_content">
+        </TextView>
+
+    </LinearLayout>
+-->
+   <!-- <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/margintop"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            style="@style/text_view_style"
+            android:textSize="@dimen/textsizemiddium"
+            android:textStyle="bold"
+            android:text="Email ID: "
+            android:layout_height="wrap_content">
+        </TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:textSize="@dimen/textsizemiddium"
+            android:textColor="@color/black"
+            style="@style/text_view_style"
+            android:id="@+id/txt_Email"
+            android:layout_height="wrap_content">
+        </TextView>
+
+    </LinearLayout>
+-->
+   <!-- <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/margintop"
+        android:layout_height="wrap_content"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            style="@style/text_view_style"
+            android:textSize="@dimen/textsizemiddium"
+            android:textStyle="bold"
+            android:text="Referred By: "
+            android:layout_height="wrap_content">
+        </TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            style="@style/text_view_style"
+            android:id="@+id/txt_Refeby"
+            android:textSize="@dimen/textsizemiddium"
+            android:layout_height="wrap_content">
+        </TextView>
+
+    </LinearLayout>-->
+
+</LinearLayout>

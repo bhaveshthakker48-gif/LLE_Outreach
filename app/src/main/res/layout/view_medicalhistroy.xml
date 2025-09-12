@@ -1,0 +1,942 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/llmedical"
+    android:layout_height="match_parent">
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:padding="5dp"
+        android:shrinkColumns="*"
+        android:stretchColumns="2">
+
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:layout_marginBottom="5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            style="@style/text_view_style"
+            android:textStyle="bold"
+            android:layout_weight="0"
+            android:textSize="@dimen/textsizemiddium"
+            android:text="Diabetes: "
+            android:layout_height="wrap_content">
+        </TextView>
+
+        <TextView
+            android:layout_width="0dp"
+            style="@style/text_view_style"
+            android:layout_weight="2"
+            android:layout_gravity="center_horizontal"
+            android:textSize="@dimen/textsizemiddium"
+            android:id="@+id/isdiabetes"
+            android:layout_height="wrap_content">
+        </TextView>
+
+    </TableRow>
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:layout_marginBottom="5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            style="@style/text_view_style"
+            android:textStyle="bold"
+            android:layout_weight="0"
+            android:textSize="@dimen/textsizemiddium"
+            android:text="Hypertension: "
+            android:layout_height="wrap_content">
+        </TextView>
+
+        <TextView
+            android:layout_marginTop="@dimen/margintop"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_gravity="center_horizontal"
+            style="@style/text_view_style"
+            android:textSize="@dimen/textsizemiddium"
+            android:id="@+id/ishypertension"
+            android:layout_height="wrap_content">
+        </TextView>
+
+    </TableRow>
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:layout_marginBottom="5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            style="@style/text_view_style"
+            android:textStyle="bold"
+            android:layout_weight="0"
+            android:textSize="@dimen/textsizemiddium"
+            android:text="Cataract: "
+            android:layout_height="wrap_content">
+        </TextView>
+
+
+        <TextView
+            android:layout_marginTop="@dimen/margintop"
+            android:layout_width="0dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="2"
+            android:textSize="@dimen/textsizemiddium"
+            style="@style/text_view_style"
+            android:id="@+id/iscataract"
+            android:layout_height="wrap_content">
+        </TextView>
+
+    </TableRow>
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:id="@+id/cataract_DiaText"
+        android:layout_marginBottom="5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            style="@style/text_view_style"
+            android:textStyle="bold"
+            android:layout_weight="0"
+            android:textSize="@dimen/textsizemiddium"
+            android:text="Cataract diagnosed: "
+            android:layout_height="wrap_content">
+        </TextView>
+
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="2"
+            android:textSize="@dimen/textsizemiddium"
+            android:layout_marginTop="@dimen/margintop"
+            style="@style/text_view_style"
+            android:id="@+id/dof_cataract_d"
+            android:layout_height="wrap_content">
+        </TextView>
+
+    </TableRow>
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:id="@+id/cataract_detailsTxt"
+        android:layout_marginBottom="5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            style="@style/text_view_style"
+            android:textStyle="bold"
+            android:layout_weight="0"
+            android:textSize="@dimen/textsizemiddium"
+            android:text="Cataract details: "
+            android:layout_height="wrap_content">
+        </TextView>
+
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="2"
+            android:layout_marginTop="@dimen/margintop"
+            style="@style/text_view_style"
+            android:textSize="@dimen/textsizemiddium"
+            android:id="@+id/cataractinfo"
+            android:layout_height="wrap_content">
+        </TextView>
+
+    </TableRow>
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:layout_marginBottom="5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            style="@style/text_view_style"
+            android:textStyle="bold"
+            android:layout_weight="0"
+            android:textSize="@dimen/textsizemiddium"
+            android:text="Epilepsy: "
+            android:layout_height="wrap_content">
+        </TextView>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="2"
+            android:textSize="@dimen/textsizemiddium"
+            style="@style/text_view_style"
+            android:id="@+id/isepf"
+            android:layout_height="wrap_content">
+        </TextView>
+
+    </TableRow>
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:id="@+id/EpilespyDiaText"
+        android:layout_marginBottom="5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            style="@style/text_view_style"
+            android:textStyle="bold"
+            android:layout_weight="0"
+            android:textSize="@dimen/textsizemiddium"
+            android:text="Epilepsy Diagnosed: "
+            android:layout_height="wrap_content">
+        </TextView>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="2"
+            android:textSize="@dimen/textsizemiddium"
+            android:layout_marginTop="@dimen/margintop"
+            style="@style/text_view_style"
+            android:id="@+id/dof_epf_d"
+            android:layout_height="wrap_content">
+        </TextView>
+
+    </TableRow>
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:id="@+id/epilepsyDetTex"
+        android:layout_marginBottom="5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            style="@style/text_view_style"
+            android:textStyle="bold"
+            android:layout_weight="0"
+            android:textSize="@dimen/textsizemiddium"
+            android:text="Epilepsy Details: "
+            android:layout_height="wrap_content">
+        </TextView>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="2"
+            android:layout_marginTop="@dimen/margintop"
+            style="@style/text_view_style"
+            android:id="@+id/epfinfo"
+            android:textSize="@dimen/textsizemiddium"
+            android:layout_height="wrap_content">
+        </TextView>
+
+    </TableRow>
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:layout_marginBottom="5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            style="@style/text_view_style"
+            android:textStyle="bold"
+            android:layout_weight="0"
+            android:textSize="@dimen/textsizemiddium"
+            android:text="Dental Problems: "
+            android:layout_height="wrap_content">
+        </TextView>
+
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="2"
+            android:textSize="@dimen/textsizemiddium"
+            style="@style/text_view_style"
+            android:id="@+id/isoralprblm"
+            android:layout_height="wrap_content">
+        </TextView>
+
+    </TableRow>
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:id="@+id/oralDiaTex"
+        android:layout_marginBottom="5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            style="@style/text_view_style"
+            android:textStyle="bold"
+            android:layout_weight="0"
+            android:textSize="@dimen/textsizemiddium"
+            android:text="Oral Problems diagnosed: "
+            android:layout_height="wrap_content">
+        </TextView>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="2"
+            style="@style/text_view_style"
+            android:textSize="@dimen/textsizemiddium"
+            android:layout_marginTop="@dimen/margintop"
+            android:id="@+id/dof_oralprblm_d"
+            android:layout_height="wrap_content">
+        </TextView>
+
+    </TableRow>
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:id="@+id/oralDetTex"
+        android:layout_marginBottom="5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            style="@style/text_view_style"
+            android:textStyle="bold"
+            android:layout_weight="0"
+            android:textSize="@dimen/textsizemiddium"
+            android:text="Oral Problems details: "
+            android:layout_height="wrap_content">
+        </TextView>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="2"
+            style="@style/text_view_style"
+            android:textSize="@dimen/textsizemiddium"
+            android:layout_marginTop="@dimen/margintop"
+            android:id="@+id/oralprblminfo"
+            android:layout_height="wrap_content">
+        </TextView>
+
+    </TableRow>
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:layout_marginBottom="5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            style="@style/text_view_style"
+            android:textStyle="bold"
+            android:layout_weight="0"
+            android:textSize="@dimen/textsizemiddium"
+            android:text="TB: "
+            android:layout_height="wrap_content">
+        </TextView>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="2"
+            style="@style/text_view_style"
+            android:textSize="@dimen/textsizemiddium"
+            android:layout_marginTop="@dimen/margintop"
+            android:id="@+id/istb"
+            android:layout_height="wrap_content">
+        </TextView>
+
+    </TableRow>
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:id="@+id/TBDiagTex"
+        android:layout_marginBottom="5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            style="@style/text_view_style"
+            android:textStyle="bold"
+            android:layout_weight="0"
+            android:textSize="@dimen/textsizemiddium"
+            android:text="TB Diagnosed: "
+            android:layout_height="wrap_content">
+        </TextView>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="2"
+            style="@style/text_view_style"
+            android:textSize="@dimen/textsizemiddium"
+            android:layout_marginTop="@dimen/margintop"
+            android:id="@+id/dof_tb_d"
+            android:layout_height="wrap_content">
+        </TextView>
+
+    </TableRow>
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:id="@+id/TBDetTex"
+        android:layout_marginBottom="5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            style="@style/text_view_style"
+            android:textStyle="bold"
+            android:layout_weight="0"
+            android:textSize="@dimen/textsizemiddium"
+            android:text="TB details: "
+            android:layout_height="wrap_content">
+        </TextView>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="2"
+            style="@style/text_view_style"
+            android:textSize="@dimen/textsizemiddium"
+            android:layout_marginTop="@dimen/margintop"
+            android:id="@+id/tbinfo"
+            android:layout_height="wrap_content">
+        </TextView>
+
+    </TableRow>
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:layout_marginBottom="5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            style="@style/text_view_style"
+            android:textStyle="bold"
+            android:layout_weight="0"
+            android:textSize="@dimen/textsizemiddium"
+            android:text="Ischemic Heart Disease: "
+            android:layout_height="wrap_content">
+        </TextView>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="2"
+            style="@style/text_view_style"
+            android:textSize="@dimen/textsizemiddium"
+            android:layout_marginTop="@dimen/margintop"
+            android:id="@+id/isschemic"
+            android:layout_height="wrap_content">
+        </TextView>
+
+    </TableRow>
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:id="@+id/IschemicDiaTex"
+        android:layout_marginBottom="5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            style="@style/text_view_style"
+            android:textStyle="bold"
+            android:layout_weight="0"
+            android:textSize="@dimen/textsizemiddium"
+            android:text="Ischemic Heart diagnosed: "
+            android:layout_height="wrap_content">
+        </TextView>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="2"
+            style="@style/text_view_style"
+            android:textSize="@dimen/textsizemiddium"
+            android:layout_marginTop="@dimen/margintop"
+            android:id="@+id/dof_schemic_d"
+            android:layout_height="wrap_content">
+        </TextView>
+
+    </TableRow>
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:id="@+id/ischemicDetTxt"
+        android:layout_marginBottom="5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            style="@style/text_view_style"
+            android:textStyle="bold"
+            android:layout_weight="0"
+            android:textSize="@dimen/textsizemiddium"
+            android:text="Ischemic Heart details: "
+            android:layout_height="wrap_content">
+        </TextView>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="2"
+            style="@style/text_view_style"
+            android:textSize="@dimen/textsizemiddium"
+            android:layout_marginTop="@dimen/margintop"
+            android:id="@+id/ischemicinfo"
+            android:layout_height="wrap_content">
+        </TextView>
+
+    </TableRow>
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:layout_marginBottom="5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            style="@style/text_view_style"
+            android:textStyle="bold"
+            android:layout_weight="0"
+            android:textSize="@dimen/textsizemiddium"
+            android:text="Stroke: "
+            android:layout_height="wrap_content">
+        </TextView>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="2"
+            style="@style/text_view_style"
+            android:textSize="@dimen/textsizemiddium"
+            android:layout_marginTop="@dimen/margintop"
+            android:id="@+id/isstroke"
+            android:layout_height="wrap_content">
+        </TextView>
+
+    </TableRow>
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:id="@+id/StrokeDiaTex"
+        android:layout_marginBottom="5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            style="@style/text_view_style"
+            android:textStyle="bold"
+            android:layout_weight="0"
+            android:textSize="@dimen/textsizemiddium"
+            android:text="Stroke diagnosed: "
+            android:layout_height="wrap_content">
+        </TextView>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="2"
+            style="@style/text_view_style"
+            android:textSize="@dimen/textsizemiddium"
+            android:layout_marginTop="@dimen/margintop"
+            android:id="@+id/dof_stroke_d"
+            android:layout_height="wrap_content">
+        </TextView>
+
+    </TableRow>
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:id="@+id/StrokeDetTex"
+        android:layout_marginBottom="5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            style="@style/text_view_style"
+            android:textStyle="bold"
+            android:layout_weight="0"
+            android:textSize="@dimen/textsizemiddium"
+            android:text="Stroke details: "
+            android:layout_height="wrap_content">
+        </TextView>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="2"
+            style="@style/text_view_style"
+            android:textSize="@dimen/textsizemiddium"
+            android:layout_marginTop="@dimen/margintop"
+            android:id="@+id/strokinfo"
+            android:layout_height="wrap_content">
+        </TextView>
+
+    </TableRow>
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:layout_marginBottom="5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            style="@style/text_view_style"
+            android:textStyle="bold"
+            android:layout_weight="0"
+            android:textSize="@dimen/textsizemiddium"
+            android:text="Cancer: "
+            android:layout_height="wrap_content">
+        </TextView>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="2"
+            style="@style/text_view_style"
+            android:textSize="@dimen/textsizemiddium"
+            android:layout_marginTop="@dimen/margintop"
+            android:id="@+id/iscancer"
+            android:layout_height="wrap_content">
+        </TextView>
+
+    </TableRow>
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:id="@+id/cancerDiaTex"
+        android:layout_marginBottom="5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            style="@style/text_view_style"
+            android:textStyle="bold"
+            android:layout_weight="0"
+            android:textSize="@dimen/textsizemiddium"
+            android:text="Cancer Diagnosed: "
+            android:layout_height="wrap_content">
+        </TextView>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="2"
+            style="@style/text_view_style"
+            android:textSize="@dimen/textsizemiddium"
+            android:layout_marginTop="@dimen/margintop"
+            android:id="@+id/dof_cancer_d"
+            android:layout_height="wrap_content">
+        </TextView>
+
+    </TableRow>
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:id="@+id/CancerDetTex"
+        android:layout_marginBottom="5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            style="@style/text_view_style"
+            android:textStyle="bold"
+            android:layout_weight="0"
+            android:textSize="@dimen/textsizemiddium"
+            android:text="Cancer details: "
+            android:layout_height="wrap_content">
+        </TextView>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="2"
+            style="@style/text_view_style"
+            android:textSize="@dimen/textsizemiddium"
+            android:layout_marginTop="@dimen/margintop"
+            android:id="@+id/cancerinfo"
+            android:layout_height="wrap_content">
+        </TextView>
+
+    </TableRow>
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:layout_marginBottom="5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            style="@style/text_view_style"
+            android:textStyle="bold"
+            android:layout_weight="0"
+            android:textSize="@dimen/textsizemiddium"
+            android:text="Congenital Abnormalities: "
+            android:layout_height="wrap_content">
+        </TextView>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="2"
+            style="@style/text_view_style"
+            android:textSize="@dimen/textsizemiddium"
+            android:layout_marginTop="@dimen/margintop"
+            android:id="@+id/congential_ab"
+            android:layout_height="wrap_content">
+        </TextView>
+
+    </TableRow>
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:layout_marginBottom="5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            style="@style/text_view_style"
+            android:textStyle="bold"
+            android:layout_weight="0"
+            android:textSize="@dimen/textsizemiddium"
+            android:text="Ear Problems: "
+            android:layout_height="wrap_content">
+        </TextView>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="2"
+            style="@style/text_view_style"
+            android:textSize="@dimen/textsizemiddium"
+            android:layout_marginTop="@dimen/margintop"
+            android:id="@+id/ishearingdefect"
+            android:layout_height="wrap_content">
+        </TextView>
+
+    </TableRow>
+    <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:id="@+id/EarProbDetTex"
+            android:layout_marginBottom="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                style="@style/text_view_style"
+                android:textStyle="bold"
+                android:layout_weight="0"
+                android:textSize="@dimen/textsizemiddium"
+                android:text="Ear Problems details: "
+                android:layout_height="wrap_content">
+            </TextView>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_weight="2"
+                style="@style/text_view_style"
+                android:textSize="@dimen/textsizemiddium"
+                android:layout_marginTop="@dimen/margintop"
+                android:id="@+id/isearproblemdetails"
+                android:layout_height="wrap_content">
+            </TextView>
+
+        </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:id="@+id/gynaecrow"
+        android:layout_marginBottom="5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            style="@style/text_view_style"
+            android:textStyle="bold"
+            android:layout_weight="0"
+            android:textSize="@dimen/textsizemiddium"
+            android:text="Gynaec: "
+            android:layout_height="wrap_content">
+        </TextView>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="2"
+            style="@style/text_view_style"
+            android:textSize="@dimen/textsizemiddium"
+            android:layout_marginTop="@dimen/margintop"
+            android:id="@+id/isgynac"
+            android:layout_height="wrap_content">
+        </TextView>
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:id="@+id/GynacDiaTex"
+        android:layout_marginBottom="5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            style="@style/text_view_style"
+            android:textStyle="bold"
+            android:layout_weight="0"
+            android:textSize="@dimen/textsizemiddium"
+            android:text="Gynaec Diagnosed: "
+            android:layout_height="wrap_content">
+        </TextView>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="2"
+            style="@style/text_view_style"
+            android:textSize="@dimen/textsizemiddium"
+            android:layout_marginTop="@dimen/margintop"
+            android:id="@+id/dof_gynac_d"
+            android:layout_height="wrap_content">
+        </TextView>
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:id="@+id/GynaecDetTex"
+        android:layout_marginBottom="5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            style="@style/text_view_style"
+            android:textStyle="bold"
+            android:layout_weight="0"
+            android:textSize="@dimen/textsizemiddium"
+            android:text="Gynaec details: "
+            android:layout_height="wrap_content">
+        </TextView>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="2"
+            style="@style/text_view_style"
+            android:textSize="@dimen/textsizemiddium"
+            android:layout_marginTop="@dimen/margintop"
+            android:id="@+id/gaynacinfo"
+            android:layout_height="wrap_content">
+        </TextView>
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:layout_marginBottom="5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            style="@style/text_view_style"
+            android:textStyle="bold"
+            android:layout_weight="0"
+            android:textSize="@dimen/textsizemiddium"
+            android:text="Tobacco: "
+            android:layout_height="wrap_content">
+        </TextView>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="2"
+            style="@style/text_view_style"
+            android:textSize="@dimen/textsizemiddium"
+            android:layout_marginTop="@dimen/margintop"
+            android:id="@+id/istobacco"
+            android:layout_height="wrap_content">
+        </TextView>
+
+    </TableRow>
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:layout_marginBottom="5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            style="@style/text_view_style"
+            android:textStyle="bold"
+            android:layout_weight="0"
+            android:textSize="@dimen/textsizemiddium"
+            android:text="Smoker: "
+            android:layout_height="wrap_content">
+        </TextView>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="2"
+            style="@style/text_view_style"
+            android:textSize="@dimen/textsizemiddium"
+            android:layout_marginTop="@dimen/margintop"
+            android:id="@+id/issmoke"
+            android:layout_height="wrap_content">
+        </TextView>
+
+    </TableRow>
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:layout_marginBottom="5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            style="@style/text_view_style"
+            android:textStyle="bold"
+            android:layout_weight="0"
+            android:textSize="@dimen/textsizemiddium"
+            android:text="Alcohol: "
+            android:layout_height="wrap_content">
+        </TextView>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="2"
+            style="@style/text_view_style"
+            android:textSize="@dimen/textsizemiddium"
+            android:layout_marginTop="@dimen/margintop"
+            android:id="@+id/isalcohol"
+            android:layout_height="wrap_content">
+        </TextView>
+
+    </TableRow>
+
+    </TableLayout>
+
+
+</LinearLayout>

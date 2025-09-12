@@ -1,0 +1,730 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_width="match_parent">
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
+
+    <ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:fillViewport="true"
+        xmlns:tools="http://schemas.android.com/tools">
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:paddingBottom="10dp"
+            android:layout_margin="8dp"
+            android:layout_height="match_parent"
+            >
+
+
+            <Spinner
+                android:layout_width="wrap_content"
+                android:gravity="center"
+                style="@style/spinner_style"
+                android:layout_marginLeft="10dp"
+                android:id="@+id/spinner_dashboard"
+                android:layout_marginTop="@dimen/margintop"
+                android:layout_height="wrap_content">
+            </Spinner>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:layout_margin="4dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        style="@style/text_view_style"
+                        android:text="PHC"
+                        android:gravity="center"
+                        android:layout_height="wrap_content">
+                    </TextView>
+
+                    <Spinner
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        style="@style/spinner_style"
+                        android:id="@+id/phc_spinner"
+                        android:background="@drawable/spinner_boarder"
+                        android:layout_height="wrap_content">
+                    </Spinner>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:layout_margin="4dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        style="@style/text_view_style"
+                        android:text="Sub-Center"
+                        android:gravity="center"
+                        android:layout_height="wrap_content">
+                    </TextView>
+
+                    <Spinner
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        style="@style/spinner_style"
+                        android:background="@drawable/spinner_boarder"
+                        android:id="@+id/subcenter_spinner"
+                        android:layout_height="wrap_content">
+                    </Spinner>
+
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:layout_margin="4dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        style="@style/text_view_style"
+                        android:text="Village"
+                        android:gravity="center"
+                        android:layout_height="wrap_content">
+                    </TextView>
+
+                    <Spinner
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/spinner_boarder"
+                        android:id="@+id/village_spinner"
+                        style="@style/spinner_style"
+                        android:layout_height="wrap_content">
+                    </Spinner>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:layout_margin="4dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        style="@style/text_view_style"
+                        android:text="Pada"
+                        android:gravity="center"
+                        android:layout_height="wrap_content">
+                    </TextView>
+
+                    <Spinner
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/spinner_boarder"
+                        style="@style/spinner_style"
+                        android:id="@+id/pada_spinner"
+                        android:layout_height="wrap_content">
+                    </Spinner>
+
+                </LinearLayout>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:background="@color/light_grey"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:weightSum="2"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:orientation="vertical"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:layout_margin="4dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            style="@style/text_view_style"
+                            android:text="Asha Worker"
+                            android:gravity="center"
+                            android:layout_height="wrap_content">
+                        </TextView>
+
+                        <Spinner
+                            android:layout_width="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/spinner_boarder"
+                            android:id="@+id/asha_worker_spn"
+                            style="@style/spinner_style"
+                            android:layout_height="wrap_content">
+                        </Spinner>
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:orientation="vertical"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:layout_margin="4dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            style="@style/text_view_style"
+                            android:text="Pada"
+                            android:gravity="center"
+                            android:layout_height="wrap_content">
+                        </TextView>
+
+                        <Spinner
+                            android:layout_width="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/spinner_boarder"
+                            style="@style/spinner_style"
+                            android:id="@+id/asha_pada_spinner"
+                            android:layout_height="wrap_content">
+                        </Spinner>
+
+                    </LinearLayout>
+                </LinearLayout>
+               <Button
+                   android:layout_width="wrap_content"
+                   android:id="@+id/btnDetails"
+                   android:text="OPD Details"
+                   android:visibility="gone"
+                   android:textAllCaps="false"
+                   android:layout_gravity="center"
+                   android:layout_height="wrap_content">
+
+               </Button>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_marginTop="10dp"
+                android:background="@color/light_grey"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:weightSum="2"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:orientation="vertical"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:layout_margin="4dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            style="@style/text_view_style"
+                            android:text="ANM Worker"
+                            android:gravity="center"
+                            android:layout_height="wrap_content">
+                        </TextView>
+
+                        <Spinner
+                            android:layout_width="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/spinner_boarder"
+                            android:id="@+id/anm_worker_spn"
+                            style="@style/spinner_style"
+                            android:layout_height="wrap_content">
+                        </Spinner>
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:orientation="vertical"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:layout_margin="4dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            style="@style/text_view_style"
+                            android:text="Pada"
+                            android:gravity="center"
+                            android:layout_height="wrap_content">
+                        </TextView>
+
+                        <Spinner
+                            android:layout_width="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/spinner_boarder"
+                            style="@style/spinner_style"
+                            android:id="@+id/anm_pada_spinner"
+                            android:layout_height="wrap_content">
+                        </Spinner>
+
+                    </LinearLayout>
+                </LinearLayout>
+                <Button
+                    android:layout_width="wrap_content"
+                    android:id="@+id/anmbtnDetails"
+                    android:text="OPD Details"
+                    android:visibility="gone"
+                    android:textAllCaps="false"
+                    android:layout_gravity="center"
+                    android:layout_height="wrap_content">
+
+                </Button>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:weightSum="2"
+                android:layout_marginTop="10dp"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        style="@style/text_view_style"
+                        android:textStyle="bold"
+                        android:text="Household count :"
+                        android:layout_height="wrap_content">
+                    </TextView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        style="@style/text_view_style"
+                        android:layout_marginLeft="5dp"
+                        android:id="@+id/txttotalhouse"
+                        android:text="0"
+                        android:layout_height="wrap_content">
+                    </TextView>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        style="@style/text_view_style"
+                        android:textStyle="bold"
+                        android:text="Population count :"
+                        android:layout_height="wrap_content">
+                    </TextView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        style="@style/text_view_style"
+                        android:layout_marginLeft="5dp"
+                        android:id="@+id/txttotalpopulation"
+                        android:text="0"
+                        android:layout_height="wrap_content">
+                    </TextView>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_marginTop="12dp"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:weightSum="3"
+                    android:orientation="horizontal"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:text="Title"
+                        android:visibility="invisible"
+                        android:layout_weight="0.5"
+                        android:layout_height="wrap_content">
+                    </TextView>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_weight="1.3"
+                        android:text="Total"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:layout_height="wrap_content">
+                    </TextView>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:text="Count"
+                        android:visibility="invisible"
+                        android:layout_weight="1.2"
+                        android:layout_height="wrap_content">
+                    </TextView>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:weightSum="3"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:text="Eye OPD"
+                        android:textStyle="bold"
+                        android:layout_weight="0.5"
+                        android:layout_height="wrap_content">
+                    </TextView>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_weight="1.3"
+                        android:gravity="center"
+                        android:id="@+id/txteyeopdcount"
+                        android:text="0"
+                        android:layout_height="wrap_content">
+                    </TextView>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:text="details"
+                        android:textStyle="bold"
+                        android:id="@+id/txteyeopddetails"
+                        android:textColor="@color/colorPrimary"
+                        android:gravity="center"
+                        android:layout_weight="1.2"
+                        android:layout_height="wrap_content">
+                    </TextView>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:weightSum="3"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:text="Cataract"
+                        android:textStyle="bold"
+                        android:layout_weight="0.5"
+                        android:layout_height="wrap_content">
+                    </TextView>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_weight="1.3"
+                        android:id="@+id/txtCataractcount"
+                        android:text="0"
+                        android:gravity="center"
+                        android:layout_height="wrap_content">
+                    </TextView>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:text="details"
+                        android:textStyle="bold"
+                        android:id="@+id/txtcataractdetails"
+                        android:textColor="@color/colorPrimary"
+                        android:gravity="center"
+                        android:layout_weight="1.2"
+                        android:layout_height="wrap_content">
+                    </TextView>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:weightSum="3"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:text="Epilepsy OPD"
+                        android:layout_weight="0.5"
+                        android:textStyle="bold"
+                        android:layout_height="wrap_content">
+                    </TextView>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_weight="1.3"
+                        android:id="@+id/txtepfcount"
+                        android:text="0"
+                        android:gravity="center"
+                        android:layout_height="wrap_content">
+                    </TextView>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:text="details"
+                        android:textStyle="bold"
+                        android:id="@+id/txtepfdetails"
+                        android:textColor="@color/colorPrimary"
+                        android:gravity="center"
+                        android:layout_weight="1.2"
+                        android:layout_height="wrap_content">
+                    </TextView>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:weightSum="3"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:text="Dental OPD"
+                        android:layout_weight="0.5"
+                        android:textStyle="bold"
+                        android:layout_height="wrap_content">
+                    </TextView>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_weight="1.3"
+                        android:id="@+id/txtdentalcount"
+                        android:text="0"
+                        android:gravity="center"
+                        android:layout_height="wrap_content">
+                    </TextView>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:text="details"
+                        android:textStyle="bold"
+                        android:id="@+id/txtdentaldetails"
+                        android:textColor="@color/colorPrimary"
+                        android:gravity="center"
+                        android:layout_weight="1.2"
+                        android:layout_height="wrap_content">
+                    </TextView>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:weightSum="3"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:text="Plastic Surgery OPD"
+                        android:layout_weight="0.5"
+                        android:textStyle="bold"
+                        android:layout_height="wrap_content">
+                    </TextView>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_weight="1.3"
+                        android:id="@+id/txtplasticsurgcount"
+                        android:text="0"
+                        android:gravity="center"
+                        android:layout_height="wrap_content">
+                    </TextView>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:text="details"
+                        android:textStyle="bold"
+                        android:id="@+id/txtplasticsurdetails"
+                        android:textColor="@color/colorPrimary"
+                        android:gravity="center"
+                        android:layout_weight="1.2"
+                        android:layout_height="wrap_content">
+                    </TextView>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:weightSum="3"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:text="Orthopaedic Surgery OPD"
+                        android:layout_weight="0.5"
+                        android:textStyle="bold"
+                        android:layout_height="wrap_content">
+                    </TextView>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_weight="1.3"
+                        android:id="@+id/txtorthosurgcount"
+                        android:text="0"
+                        android:gravity="center"
+                        android:layout_height="wrap_content">
+                    </TextView>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:text="details"
+                        android:textStyle="bold"
+                        android:id="@+id/txtorthosurdetails"
+                        android:textColor="@color/colorPrimary"
+                        android:gravity="center"
+                        android:layout_weight="1.2"
+                        android:layout_height="wrap_content">
+                    </TextView>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:weightSum="3"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:text="ENT OPD"
+                        android:layout_weight="0.5"
+                        android:textStyle="bold"
+                        android:layout_height="wrap_content">
+                    </TextView>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_weight="1.3"
+                        android:id="@+id/txtentcount"
+                        android:text="0"
+                        android:gravity="center"
+                        android:layout_height="wrap_content">
+                    </TextView>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:text="details"
+                        android:textStyle="bold"
+                        android:id="@+id/txtentdetails"
+                        android:textColor="@color/colorPrimary"
+                        android:gravity="center"
+                        android:layout_weight="1.2"
+                        android:layout_height="wrap_content">
+                    </TextView>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:weightSum="3"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:text="Gynaec OPD"
+                        android:layout_weight="0.5"
+                        android:textStyle="bold"
+                        android:layout_height="wrap_content">
+                    </TextView>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_weight="1.3"
+                        android:id="@+id/txtgynaeccount"
+                        android:text="0"
+                        android:gravity="center"
+                        android:layout_height="wrap_content">
+                    </TextView>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:text="details"
+                        android:textStyle="bold"
+                        android:id="@+id/txtgynaecdetails"
+                        android:textColor="@color/colorPrimary"
+                        android:gravity="center"
+                        android:layout_weight="1.2"
+                        android:layout_height="wrap_content">
+                    </TextView>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:weightSum="3"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:text="Oral Cancer OPD"
+                        android:layout_weight="0.5"
+                        android:textStyle="bold"
+                        android:layout_height="wrap_content">
+                    </TextView>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_weight="1.3"
+                        android:id="@+id/txtoralcanceropd"
+                        android:text="0"
+                        android:gravity="center"
+                        android:layout_height="wrap_content">
+                    </TextView>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:text="details"
+                        android:id="@+id/txtdetailoralcancer"
+                        android:textStyle="bold"
+                        android:textColor="@color/colorPrimary"
+                        android:gravity="center"
+                        android:layout_weight="1.2"
+                        android:layout_height="wrap_content">
+                    </TextView>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
+

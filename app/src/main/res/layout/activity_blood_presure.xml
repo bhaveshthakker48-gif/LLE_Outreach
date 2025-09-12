@@ -1,0 +1,785 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.activity.BloodPresureActivity">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_below="@+id/toolbar"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+
+
+            <Spinner
+                android:layout_width="wrap_content"
+                android:gravity="center"
+                style="@style/spinner_style"
+                android:layout_marginLeft="10dp"
+                android:id="@+id/spinner_bloodpressure"
+                android:layout_marginTop="@dimen/margintop"
+                android:layout_height="wrap_content">
+            </Spinner>
+
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="15dp"
+                android:elevation="10dp"
+                app:cardCornerRadius="10dp">
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    xmlns:scatter="http://schemas.android.com/apk/res-auto"
+                    android:weightSum="2">
+
+                    <!--Pie chart to display the data-->
+
+                    <com.intrusoft.scatter.PieChart
+                        android:id="@+id/pie_chart"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginBottom="15dp"
+                        scatter:equalPartition="false"
+                        />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="20dp"
+                        android:orientation="vertical"
+                        android:gravity="center_vertical">
+
+                        <!-- Row: Hypotension -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical">
+
+                            <View
+                                android:layout_width="15dp"
+                                android:layout_height="15dp"
+                                android:background="#FFA726" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Hypotension"
+                                android:textStyle="bold"
+                                android:layout_marginStart="10dp" />
+                        </LinearLayout>
+
+                        <!-- Row: Pre-Hypertension -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="5dp"
+                            android:gravity="center_vertical">
+
+                            <View
+                                android:layout_width="15dp"
+                                android:layout_height="15dp"
+                                android:background="#000000" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Pre-Hypertension"
+                                android:textStyle="bold"
+                                android:layout_marginStart="10dp" />
+                        </LinearLayout>
+
+                        <!-- Row: Stage 1 Hypertension -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="5dp"
+                            android:gravity="center_vertical">
+
+                            <View
+                                android:layout_width="15dp"
+                                android:layout_height="15dp"
+                                android:background="#C6FF00" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Stage 1 Hypertension"
+                                android:textStyle="bold"
+                                android:layout_marginStart="10dp" />
+                        </LinearLayout>
+
+                        <!-- Row: Stage 2 Hypertension -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="5dp"
+                            android:gravity="center_vertical">
+
+                            <View
+                                android:layout_width="15dp"
+                                android:layout_height="15dp"
+                                android:background="#A7FFEB" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Stage 2 Hypertension"
+                                android:textStyle="bold"
+                                android:layout_marginStart="10dp" />
+                        </LinearLayout>
+
+                        <!-- Row: Low Blood Pressure -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="5dp"
+                            android:gravity="center_vertical">
+
+                            <View
+                                android:layout_width="15dp"
+                                android:layout_height="15dp"
+                                android:background="#66BB6A" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Low Blood Pressure"
+                                android:textStyle="bold"
+                                android:layout_marginStart="10dp" />
+                        </LinearLayout>
+
+                        <!-- Row: High Blood Pressure -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="5dp"
+                            android:gravity="center_vertical">
+
+                            <View
+                                android:layout_width="15dp"
+                                android:layout_height="15dp"
+                                android:background="#6A1B9A" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="High Blood Pressure"
+                                android:textStyle="bold"
+                                android:layout_marginStart="10dp" />
+                        </LinearLayout>
+
+                        <!-- Row: Normal -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="5dp"
+                            android:gravity="center_vertical">
+
+                            <View
+                                android:layout_width="15dp"
+                                android:layout_height="15dp"
+                                android:background="#78909C" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Normal"
+                                android:textStyle="bold"
+                                android:layout_marginStart="10dp" />
+                        </LinearLayout>
+
+                        <!-- Row: Data Not Available -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="5dp"
+                            android:gravity="center_vertical">
+
+                            <View
+                                android:layout_width="15dp"
+                                android:layout_height="15dp"
+                                android:background="#D50000" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Data Not Available"
+                                android:textStyle="bold"
+                                android:layout_marginStart="10dp" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/cardViewGraph"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:elevation="10dp"
+                app:cardCornerRadius="10dp"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:layout_height="match_parent">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:orientation="horizontal"
+                        android:weightSum="3"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            style="@style/text_view_style"
+                            android:layout_weight="0.6"
+                            android:gravity="center"
+                            android:visibility="invisible"
+                            android:fontFamily="sans-serif-light"
+                            android:textStyle="bold"
+                            android:text=" Hypoglycemia "
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1.2"
+                            android:gravity="right"
+                            android:textColor="@color/black"
+                            style="@style/text_view_style"
+                            android:fontFamily="sans-serif-light"
+                            android:textStyle="bold"
+                            android:text=" Count "
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            style="@style/text_view_style"
+                            android:layout_weight="1.2"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:fontFamily="sans-serif-light"
+                            android:textStyle="bold"
+                            android:text=" percentage "
+                            />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:orientation="horizontal"
+                        android:weightSum="3"
+                        android:layout_marginRight="25dp"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            style="@style/text_view_style"
+                            android:layout_weight="0.6"
+                            android:fontFamily="sans-serif-light"
+                            android:textStyle="bold"
+                            android:text=" Hypotension "
+                            />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1.2"
+                            android:id="@+id/txthypogly_count"
+                            style="@style/text_view_style"
+                            android:fontFamily="sans-serif-light"
+                            android:textStyle="bold"
+                            android:text="0"
+                            />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            style="@style/text_view_style"
+                            android:layout_weight="1.2"
+                            android:id="@+id/txthypogly_per"
+                            android:gravity="left"
+                            android:maxLength="5"
+                            android:fontFamily="sans-serif-light"
+                            android:textStyle="bold"
+                            android:text="0.0"
+                            />
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/color_two"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:orientation="horizontal"
+                        android:weightSum="3"
+                        android:layout_marginRight="25dp"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            style="@style/text_view_style"
+                            android:layout_weight="0.6"
+                            android:fontFamily="sans-serif-light"
+                            android:textStyle="bold"
+                            android:text=" Pre - Hypertension "
+                            />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1.2"
+                            android:id="@+id/txtprehyper_count"
+                            style="@style/text_view_style"
+                            android:fontFamily="sans-serif-light"
+                            android:textStyle="bold"
+                            android:text="0"
+                            />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            style="@style/text_view_style"
+                            android:id="@+id/txtprehyper_per"
+                            android:layout_weight="1.2"
+                            android:gravity="left"
+                            android:maxLength="5"
+                            android:fontFamily="sans-serif-light"
+                            android:textStyle="bold"
+                            android:text="0.0"
+                            />
+
+                    </LinearLayout>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/color_two"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:orientation="horizontal"
+                        android:weightSum="3"
+                        android:layout_marginRight="25dp"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            style="@style/text_view_style"
+                            android:layout_weight="0.6"
+                            android:fontFamily="sans-serif-light"
+                            android:textStyle="bold"
+                            android:text=" Stage 1 - Hypertension "
+                            />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1.2"
+                            android:id="@+id/txtstage1_hyper_count"
+                            style="@style/text_view_style"
+                            android:fontFamily="sans-serif-light"
+                            android:textStyle="bold"
+                            android:text="0"
+                            />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            style="@style/text_view_style"
+                            android:id="@+id/txtstage1_hyper_perc"
+                            android:layout_weight="1.2"
+                            android:gravity="left"
+                            android:maxLength="5"
+                            android:fontFamily="sans-serif-light"
+                            android:textStyle="bold"
+                            android:text="0.0"
+                            />
+
+                    </LinearLayout>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/color_two"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp" />
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:orientation="horizontal"
+                        android:weightSum="3"
+                        android:layout_marginRight="25dp"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            style="@style/text_view_style"
+                            android:layout_weight="0.6"
+                            android:fontFamily="sans-serif-light"
+                            android:textStyle="bold"
+                            android:text=" Stage 2 - Hypertension "
+                            />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1.2"
+                            android:textStyle="bold"
+                            android:id="@+id/txtstage2_hyper_count"
+                            style="@style/text_view_style"
+                            android:fontFamily="sans-serif-light"
+                            android:gravity="left"
+                            android:text="0"
+                            />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            style="@style/text_view_style"
+                            android:layout_weight="1.2"
+                            android:id="@+id/txtstage2_hyper_perc"
+                            android:gravity="left"
+                            android:maxLength="5"
+                            android:fontFamily="sans-serif-light"
+                            android:textStyle="bold"
+                            android:text="0.0"
+                            />
+
+                    </LinearLayout>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/color_two"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp" />
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:orientation="horizontal"
+                        android:weightSum="3"
+                        android:layout_marginRight="25dp"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            style="@style/text_view_style"
+                            android:layout_weight="0.6"
+                            android:fontFamily="sans-serif-light"
+                            android:textStyle="bold"
+                            android:text=" Low Blood Pressure "
+                            />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1.2"
+                            android:id="@+id/txtlowblood_count"
+                            style="@style/text_view_style"
+                            android:fontFamily="sans-serif-light"
+                            android:textStyle="bold"
+                            android:text="0"
+                            />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            style="@style/text_view_style"
+                            android:layout_weight="1.2"
+                            android:id="@+id/txtlowblood_perc"
+                            android:gravity="left"
+                            android:maxLength="5"
+                            android:fontFamily="sans-serif-light"
+                            android:textStyle="bold"
+                            android:text="0.0"
+                            />
+
+                    </LinearLayout>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/color_two"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:orientation="horizontal"
+                        android:weightSum="3"
+                        android:layout_marginRight="25dp"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            style="@style/text_view_style"
+                            android:layout_weight="0.6"
+                            android:fontFamily="sans-serif-light"
+                            android:textStyle="bold"
+                            android:text=" Hight Blood Pressure "
+                            />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1.2"
+                            android:id="@+id/txthighbp_count"
+                            style="@style/text_view_style"
+                            android:fontFamily="sans-serif-light"
+                            android:textStyle="bold"
+                            android:text="0"
+                            />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            style="@style/text_view_style"
+                            android:layout_weight="1.2"
+                            android:id="@+id/txthighbp_perc"
+                            android:gravity="left"
+                            android:maxLength="5"
+                            android:fontFamily="sans-serif-light"
+                            android:textStyle="bold"
+                            android:text="0.0"
+                            />
+
+                    </LinearLayout>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/color_two"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:orientation="horizontal"
+                        android:weightSum="3"
+                        android:layout_marginRight="25dp"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            style="@style/text_view_style"
+                            android:layout_weight="0.6"
+                            android:fontFamily="sans-serif-light"
+                            android:textStyle="bold"
+                            android:text=" Normal "
+                            />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1.2"
+                            android:id="@+id/txtnormalcount"
+                            style="@style/text_view_style"
+                            android:fontFamily="sans-serif-light"
+                            android:textStyle="bold"
+                            android:text="0"
+                            />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            style="@style/text_view_style"
+                            android:id="@+id/txtnormalperce"
+                            android:layout_weight="1.2"
+                            android:gravity="left"
+                            android:maxLength="5"
+                            android:fontFamily="sans-serif-light"
+                            android:textStyle="bold"
+                            android:text="0.0"
+                            />
+
+                    </LinearLayout>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/color_two"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:orientation="horizontal"
+                        android:weightSum="3"
+                        android:layout_marginRight="25dp"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            style="@style/text_view_style"
+                            android:layout_weight="0.6"
+                            android:fontFamily="sans-serif-light"
+                            android:textStyle="bold"
+                            android:text=" Data Not Available "
+                            />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1.2"
+                            android:id="@+id/txtdnacount"
+                            style="@style/text_view_style"
+                            android:fontFamily="sans-serif-light"
+                            android:textStyle="bold"
+                            android:text="0"
+                            />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            style="@style/text_view_style"
+                            android:id="@+id/txtdnaperce"
+                            android:layout_weight="1.2"
+                            android:gravity="left"
+                            android:maxLength="5"
+                            android:fontFamily="sans-serif-light"
+                            android:textStyle="bold"
+                            android:text="0.0"
+                            />
+
+                    </LinearLayout>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/color_two"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:orientation="horizontal"
+                        android:weightSum="3"
+                        android:layout_marginRight="25dp"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            style="@style/text_view_style"
+                            android:layout_weight="0.6"
+                            android:fontFamily="sans-serif-light"
+                            android:textStyle="bold"
+                            android:text=" Total "
+                            />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1.2"
+                            android:id="@+id/txtTotalcount"
+                            style="@style/text_view_style"
+                            android:fontFamily="sans-serif-light"
+                            android:textStyle="bold"
+                            android:text="0"
+                            />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            style="@style/text_view_style"
+                            android:id="@+id/txttotalperce"
+                            android:layout_weight="1.2"
+                            android:gravity="left"
+                            android:maxLength="5"
+                            android:fontFamily="sans-serif-light"
+                            android:textStyle="bold"
+                            android:text="0.0"
+                            />
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

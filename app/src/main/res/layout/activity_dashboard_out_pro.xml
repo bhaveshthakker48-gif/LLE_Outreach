@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    >
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:src="@drawable/log"
+            android:id="@+id/outreachimg_logout"
+            android:layout_margin="10dp"
+            android:layout_alignParentRight="true"
+            android:layout_height="50dp">
+        </ImageView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="40dp"
+                android:paddingBottom="20dp" >
+
+                <TableRow
+                    style="@style/dashboard_button_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+
+                    <Button
+                        android:id="@+id/btnCamp"
+                        android:text="Camp"
+                        style="@style/dashboard_button_style"
+                        android:drawableTop="@mipmap/camp" />
+
+                    <Button
+                        android:id="@+id/btnReport"
+                        android:text="Reports"
+                        style="@style/dashboard_button_style"
+                        android:drawableTop="@mipmap/report"
+                        android:visibility="visible"/>
+
+                </TableRow>
+
+                <TableRow
+                    style="@style/dashboard_button_style"
+                    android:layout_width="match_parent"
+                    android:visibility="invisible"
+                    android:layout_height="wrap_content"
+                    >
+
+                    <ImageView
+                        android:layout_width="120dp"
+                        android:src="@drawable/campcompletedbtn"
+                        android:id="@+id/campcomplete"
+                        android:layout_margin="5dp"
+                        android:visibility="invisible"
+                        android:layout_alignParentLeft="true"
+                        android:layout_height="wrap_content">
+                    </ImageView>
+
+                    <Button
+                        android:layout_width="120dp"
+                        android:layout_margin="5dp"
+                        android:text="sfs"
+                        android:id="@+id/export"
+                        android:layout_alignParentLeft="true"
+                        android:layout_height="wrap_content">
+                    </Button>
+
+                </TableRow>
+            </TableLayout>
+        </LinearLayout>
+
+
+
+        <ImageView
+            android:id="@+id/imgsynch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
+            android:src="@drawable/pair">
+
+        </ImageView>
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="30dp"
+        android:orientation="vertical"
+        android:layout_marginRight="100dp"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="Last sync"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_margin="10dp"
+            android:layout_gravity="left"
+            android:layout_height="wrap_content">
+        </TextView>
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_marginBottom="20dp"
+            android:id="@+id/syncdatetimerecylcer"
+            android:layout_height="wrap_content">
+        </androidx.recyclerview.widget.RecyclerView>
+    </LinearLayout>
+
+    </RelativeLayout>
+
+
+</LinearLayout>

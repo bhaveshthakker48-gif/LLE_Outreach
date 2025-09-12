@@ -1,0 +1,489 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.activity.DailyworkPhcPadaActivity">
+
+    <!-- Toolbar -->
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
+
+    <!-- Scrollable Form -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                android:layout_height="wrap_content">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:text="Date"
+                        android:textSize="@dimen/text_size"
+                        android:layout_height="wrap_content">
+                    </TextView>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:padding="5dp"
+                        android:id="@+id/txtPadaDate"
+                        android:hint="Date"
+                        android:layout_marginRight="5dp"
+                        style="@style/edit_text_style"
+                        android:background="@drawable/bg_blackboarder"
+                        android:layout_height="wrap_content">
+                    </TextView>
+
+                </LinearLayout>
+
+
+<!--                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    >
+
+                    <EditText
+                        style="@style/edit_text_style"
+                        android:hint="Date"
+                        android:paddingLeft="5dp"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="5dp"
+                        android:background="@drawable/bg_blackboarder"
+                        />
+                </android.support.design.widget.TextInputLayout>-->
+
+               <TextView
+                   android:layout_width="match_parent"
+                   android:layout_weight="1"
+                   android:layout_height="wrap_content"></TextView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_marginTop="8dp"
+                android:weightSum="2"
+                android:visibility="gone"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+
+
+                <AutoCompleteTextView
+                    android:id="@+id/phcTextView"
+                    android:layout_weight="1"
+                    android:layout_marginRight="5dp"
+                    android:hint="Select PHC"
+                    style="@style/edit_text_style"
+                    android:padding="5dp"
+                    android:background="@drawable/bg_blackboarder"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="" />
+
+                <AutoCompleteTextView
+                    android:id="@+id/subcenterTextView"
+                    android:layout_weight="1"
+                    android:hint="Select Sub Centre"
+                    android:padding="5dp"
+                    style="@style/edit_text_style"
+                    android:layout_marginLeft="5dp"
+                    android:background="@drawable/bg_blackboarder"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="" />
+
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:weightSum="2"
+                style="@style/liner_ll"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:layout_weight="1"
+                    android:layout_marginRight="5dp"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:text="PHC"
+                        android:textSize="@dimen/text_size"
+                        android:layout_height="wrap_content">
+                    </TextView>
+
+                    <Spinner
+                        android:id="@+id/spinner_phc"
+                        style="@style/spinner_style"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ellipsize="end"
+                        android:maxLength="14"
+                        android:layout_marginRight="5dp"
+                        android:background="@drawable/spinner_boarder"/>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:text="Sub Center"
+                        android:textSize="@dimen/text_size"
+                        android:layout_height="wrap_content">
+                    </TextView>
+
+                    <Spinner
+                        android:id="@+id/spinner_subcentre"
+                        style="@style/spinner_style"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:padding="5dp"
+                        android:layout_marginRight="5dp"
+                        android:background="@drawable/spinner_boarder"/>
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llvillagepada"
+                style="@style/liner_ll">
+
+                <AutoCompleteTextView
+                    android:id="@+id/selet_village"
+                    android:layout_weight="1"
+                    android:layout_marginRight="5dp"
+                    android:hint="Village"
+                    style="@style/edit_text_style"
+                    android:padding="5dp"
+                    android:digits="@string/dg"
+                    android:background="@drawable/bg_blackboarder"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="" />
+
+                <AutoCompleteTextView
+                    android:id="@+id/selet_pada"
+                    android:layout_weight="1"
+                    android:hint="Pada"
+                    android:padding="5dp"
+                    android:cursorVisible="false"
+                    android:digits="@string/dg"
+                    style="@style/edit_text_style"
+                    android:layout_marginLeft="5dp"
+                    android:background="@drawable/bg_blackboarder"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="" />
+
+
+            </LinearLayout>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:text="Work begin"
+                android:id="@+id/btnWorkbegin"
+                style="@style/button_style"
+                android:paddingLeft="30dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginRight="5dp"
+                android:textAllCaps="false"
+                android:background="@drawable/bg_buttonboarder"
+                android:paddingRight="30dp"
+                android:layout_height="wrap_content">
+            </Button>
+
+
+
+            <View
+                android:layout_width="match_parent"
+                android:background="@color/colorPrimary"
+                android:layout_marginTop="10dp"
+                android:layout_height="1dp">
+            </View>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_gravity="center"
+                android:textColor="@color/black"
+                android:text="Health Worker Details"
+                android:textSize="@dimen/text_size_large"
+                android:layout_marginTop="10dp"
+                android:layout_height="wrap_content">
+            </TextView>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_gravity="left"
+                android:text="ANM Details"
+                android:textSize="@dimen/text_size_large"
+                android:layout_marginTop="10dp"
+                android:layout_height="wrap_content">
+            </TextView>
+
+            <LinearLayout
+                style="@style/liner_ll"
+                >
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_marginRight="5dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    >
+
+                    <EditText
+                        style="@style/edit_text_style"
+                        android:hint="Name"
+                        android:id="@+id/edtanmName"
+                        android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ "
+                        android:inputType="textCapWords|textPersonName"
+                        android:singleLine="true"
+                        android:paddingLeft="5dp"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="5dp"
+                        android:background="@drawable/bg_blackboarder"
+                        />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="1"
+                    >
+
+                    <EditText
+                        style="@style/edit_text_style"
+                        android:hint="Mobile No"
+                        android:id="@+id/edtanmMobno"
+                        android:paddingLeft="5dp"
+                        android:inputType="number"
+                        android:paddingTop="10dp"
+                        android:maxLength="10"
+                        android:paddingBottom="5dp"
+                        android:background="@drawable/bg_blackboarder"
+                        />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_gravity="left"
+                android:text="ASHA Worker"
+                android:textSize="@dimen/text_size_large"
+                android:layout_marginTop="20dp"
+                android:layout_height="wrap_content">
+            </TextView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_marginRight="5dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    >
+
+                    <EditText
+                        style="@style/edit_text_style"
+                        android:hint="Name"
+                        android:id="@+id/edtashaname"
+                        android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ "
+                        android:inputType="textCapWords|textPersonName"
+                        android:singleLine="true"
+                        android:paddingLeft="5dp"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="5dp"
+                        android:background="@drawable/bg_blackboarder"
+                        />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="1"
+                    >
+
+                    <EditText
+                        style="@style/edit_text_style"
+                        android:hint="Mobile No"
+                        android:inputType="number"
+                        android:paddingLeft="5dp"
+                        android:maxLength="10"
+                        android:id="@+id/edtashamobileno"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="5dp"
+                        android:background="@drawable/bg_blackboarder"
+                        />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_marginTop="15dp"
+                android:layout_height="wrap_content"
+                >
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_marginRight="5dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    >
+
+                    <EditText
+                        style="@style/edit_text_style"
+                        android:hint="Gram Panchayat Name"
+                        android:paddingLeft="5dp"
+                        android:id="@+id/edtgrampanchyatname"
+                        android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ "
+                        android:inputType="textCapWords|textPersonName"
+                        android:singleLine="true"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="5dp"
+                        android:background="@drawable/bg_blackboarder"
+                        />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="1"
+                    >
+
+                    <EditText
+                        style="@style/edit_text_style"
+                        android:hint="Contact Person Name"
+                        android:paddingLeft="5dp"
+                        android:id="@+id/edtcontactperson"
+                        android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ "
+                        android:inputType="textCapWords|textPersonName"
+                        android:singleLine="true"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="5dp"
+                        android:background="@drawable/bg_blackboarder"
+                        />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_marginTop="15dp"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_marginRight="5dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    >
+
+                    <EditText
+                        style="@style/edit_text_style"
+                        android:hint="Mobile Number"
+                        android:paddingLeft="5dp"
+                        android:id="@+id/edtcontmobileno"
+                        android:paddingTop="10dp"
+                        android:inputType="number"
+                        android:maxLength="10"
+                        android:paddingBottom="5dp"
+                        android:background="@drawable/bg_blackboarder"
+                        />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_marginRight="5dp"
+                    android:visibility="invisible"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    >
+
+                    <EditText
+                        style="@style/edit_text_style"
+                        android:hint="Gram Panchayat Name"
+                        android:paddingLeft="5dp"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="5dp"
+                        android:background="@drawable/bg_blackboarder"
+                        />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:weightSum="2"
+            android:layout_marginTop="30dp"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/btnAddPada"
+                style="@style/button_style"
+                android:paddingLeft="30dp"
+                android:layout_weight="1"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginRight="5dp"
+                android:textAllCaps="false"
+                android:background="@drawable/bg_buttonboarder"
+                android:paddingRight="30dp"
+                android:text="Submit health worker" />
+
+            <Button
+                android:id="@+id/btnAddHousehold"
+                style="@style/button_style"
+                android:paddingLeft="30dp"
+                android:layout_weight="1"
+                android:textAllCaps="false"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="5dp"
+                android:background="@drawable/bg_buttonboarder"
+                android:layout_marginBottom="20dp"
+                android:paddingRight="30dp"
+                android:text="Add population data" />
+
+        </LinearLayout>
+
+
+        </LinearLayout>
+        </ScrollView>
+</LinearLayout>
