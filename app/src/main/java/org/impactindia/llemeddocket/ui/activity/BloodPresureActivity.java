@@ -88,13 +88,7 @@ public class BloodPresureActivity extends BaseActivity implements AdapterView.On
             data1 = String.valueOf(newuserlist.get(0).getUserId());
             setbscount(data1);
         }
-
-      /*  percentage();
-        drawpiegraph();*/
-
     }
-
-
 
     private void init() {
         toolbar = findViewById(R.id.toolbar);
@@ -248,5 +242,10 @@ public class BloodPresureActivity extends BaseActivity implements AdapterView.On
     @Override
     public void onNothingSelected(AdapterView<?> adapterView) {
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
     }
 }

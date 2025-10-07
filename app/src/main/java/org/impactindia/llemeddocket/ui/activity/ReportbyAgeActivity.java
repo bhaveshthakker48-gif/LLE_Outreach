@@ -215,13 +215,12 @@ public class ReportbyAgeActivity extends AppCompatActivity implements AdapterVie
 
     private void setage(String data1) {
         //getAgecount
-        txtage0to18.setText(String.valueOf(PopulationMedicalModel.getAgecount("1","17", SharedPreference.get("CAMPID"),data1)));
+        txtage0to18.setText(String.valueOf(PopulationMedicalModel.getAgecount("0","17", SharedPreference.get("CAMPID"),data1)));
         txtage18to29.setText(String.valueOf(PopulationMedicalModel.getAgecount("18","29", SharedPreference.get("CAMPID"),data1)));
         txtage30to39.setText(String.valueOf(PopulationMedicalModel.getAgecount("30","39", SharedPreference.get("CAMPID"),data1)));
         txtage40to49.setText(String.valueOf(PopulationMedicalModel.getAgecount("40","49", SharedPreference.get("CAMPID"),data1)));
         txtage50to59.setText(String.valueOf(PopulationMedicalModel.getAgecount("50","59", SharedPreference.get("CAMPID"),data1)));
         txtageabove60.setText(String.valueOf(PopulationMedicalModel.getAgecountgreaterthan60( SharedPreference.get("CAMPID"),data1)));
-      //  txtagetotal.setText(String.valueOf(PopulationMedicalModel.gettotalpopulationcount(SharedPreference.get("CAMPID"),SharedPreference.get("Userid"))));
         txtagetotal.setText(String.valueOf(PopulationMedicalModel.gettotalpopulationcount(SharedPreference.get("CAMPID"),data1)));
 
         findPercentage();
@@ -241,5 +240,10 @@ public class ReportbyAgeActivity extends AppCompatActivity implements AdapterVie
     @Override
     public void onNothingSelected(AdapterView<?> adapterView) {
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
     }
 }

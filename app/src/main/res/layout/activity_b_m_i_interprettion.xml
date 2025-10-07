@@ -83,6 +83,29 @@
                                 android:layout_width="15dp"
                                 android:layout_gravity="center"
                                 android:layout_height="15dp"
+                                android:background="#42A5F5"/>
+
+                            <!--Text view to display R -->
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="UnderAge"
+                                android:textStyle="bold"
+                                android:paddingLeft="10dp"/>
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical">
+
+                            <!--View to display the yellow color icon-->
+                            <View
+                                android:layout_width="15dp"
+                                android:layout_gravity="center"
+                                android:layout_height="15dp"
                                 android:background="#FFA726"/>
 
                             <!--Text view to display R -->
@@ -344,6 +367,104 @@
                             />
 
                     </LinearLayout>
+
+
+<!--                    <LinearLayout-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:orientation="horizontal"-->
+<!--                        android:weightSum="3"-->
+<!--                        android:layout_marginRight="25dp"-->
+<!--                        android:layout_marginLeft="25dp"-->
+<!--                        android:layout_marginTop="10dp"-->
+<!--                        android:layout_marginBottom="10dp"-->
+<!--                        android:layout_height="match_parent">-->
+
+<!--                        <TextView-->
+<!--                            android:layout_width="0dp"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            style="@style/text_view_style"-->
+<!--                            android:layout_weight="1"-->
+<!--                            android:fontFamily="sans-serif-light"-->
+<!--                            android:textStyle="bold"-->
+<!--                            android:gravity="left"-->
+<!--                            android:text=" Under Two Years "-->
+<!--                            />-->
+
+<!--                        <TextView-->
+<!--                            android:layout_width="0dp"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_weight="1"-->
+<!--                            android:gravity="center"-->
+<!--                            android:id="@+id/txtageundertwoYears"-->
+<!--                            style="@style/text_view_style"-->
+<!--                            android:fontFamily="sans-serif-light"-->
+<!--                            android:textStyle="bold"-->
+<!--                            android:text="0"-->
+<!--                            />-->
+
+<!--                        <TextView-->
+<!--                            android:layout_width="0dp"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            style="@style/text_view_style"-->
+<!--                            android:layout_weight="1"-->
+<!--                            android:id="@+id/tvtageundertwoYears"-->
+<!--                            android:gravity="center"-->
+<!--                            android:maxLength="5"-->
+<!--                            android:fontFamily="sans-serif-light"-->
+<!--                            android:textStyle="bold"-->
+<!--                            android:text="0.0"-->
+<!--                            />-->
+
+<!--                    </LinearLayout>-->
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:orientation="horizontal"
+                        android:weightSum="3"
+                        android:layout_marginRight="25dp"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            style="@style/text_view_style"
+                            android:layout_weight="1"
+                            android:fontFamily="sans-serif-light"
+                            android:textStyle="bold"
+                            android:gravity="left"
+                            android:text="Under Age"
+                            />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:id="@+id/txtunderAge"
+                            style="@style/text_view_style"
+                            android:fontFamily="sans-serif-light"
+                            android:textStyle="bold"
+                            android:text="0"
+                            />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            style="@style/text_view_style"
+                            android:layout_weight="1"
+                            android:id="@+id/tvtUnderAge"
+                            android:gravity="center"
+                            android:maxLength="5"
+                            android:fontFamily="sans-serif-light"
+                            android:textStyle="bold"
+                            android:text="0.0"
+                            />
+
+                    </LinearLayout>
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:orientation="horizontal"

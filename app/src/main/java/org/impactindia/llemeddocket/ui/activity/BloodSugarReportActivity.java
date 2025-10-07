@@ -97,9 +97,6 @@ public class BloodSugarReportActivity extends BaseActivity implements AdapterVie
          perprediabetes = (float) ((Double.valueOf(txtcountprediabetes.getText().toString())/Double.valueOf(txt_bptotal.getText().toString())) * 100);
          perdiabetes = (float) ((Double.valueOf(txtdiabetes.getText().toString())/Double.valueOf(txt_bptotal.getText().toString())) * 100);
          perdatanotavail = (float) ((Double.valueOf(txtdataNotAvail.getText().toString())/Double.valueOf(txt_bptotal.getText().toString())) * 100);
-        // perdatanotavail = (int) ((Double.valueOf(txtdataNotAvail.getText().toString())/Double.valueOf(txt_bptotal.getText().toString())) * 100);
-
-
         tvHypoglycemiaper.setText(String.valueOf(perthypoglyce));
         tvPreDiabetesper.setText(String.valueOf(perprediabetes));
         tvDiabetesper.setText(String.valueOf(perdiabetes));
@@ -122,8 +119,6 @@ public class BloodSugarReportActivity extends BaseActivity implements AdapterVie
         txtdataNotAvail = findViewById(R.id.txtdataNotAvail);
         txt_bptotal = findViewById(R.id.txt_bptotal);
 
-        //,,,,
-
         tvHypoglycemiaper = findViewById(R.id.tvHypoglycemiaper);
         tvPreDiabetesper = findViewById(R.id.tvPreDiabetesper);
         tvDiabetesper = findViewById(R.id.tvDiabetesper);
@@ -133,7 +128,6 @@ public class BloodSugarReportActivity extends BaseActivity implements AdapterVie
 
         spinner_bloodsugareport = findViewById(R.id.spinner_bloodsugareport);
         spinner_bloodsugareport.setOnItemSelectedListener(this);
-
 
         userlist = userDetailsDAO.getuserlist(SharedPreference.get("CAMPID"));
 
@@ -149,14 +143,10 @@ public class BloodSugarReportActivity extends BaseActivity implements AdapterVie
             }
         }
 
-
         Log.i("ckm=>ActivCamp", userlist.size() + "");
         ActiveCampReport report = new ActiveCampReport(this, newuserlist);
         spinner_bloodsugareport.setAdapter(report);
-
     }
-
-
 
     private void setbscount(final String userid) {
         txtcounthypoglyce.setText(String.valueOf(PopulationMedicalModel.getBloodSugarCount("Hypoglycemia", SharedPreference.get("CAMPID"),userid)));
@@ -214,6 +204,10 @@ public class BloodSugarReportActivity extends BaseActivity implements AdapterVie
 
     @Override
     public void onNothingSelected(AdapterView<?> adapterView) {
-        // You can leave this empty or add some default behavior if needed
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
     }
 }

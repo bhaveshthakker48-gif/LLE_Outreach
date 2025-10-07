@@ -16,13 +16,17 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
 
+import android.os.Looper;
+import android.text.Html;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.VideoView;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.widget.Toolbar;
@@ -101,8 +105,6 @@ public class DashboardActivityOutPro extends BaseActivity implements View.OnClic
     ArrayList<PopMedicalData> popData = new ArrayList<>();
     ArrayList<OutreachPlanData> campname = new ArrayList<OutreachPlanData>();
     JsonObject object;
-    //String url = "https://impactindiafoundation.org/ImpactWebService/rest/impactwebcall/AddOutreachDetails";
-    //String urlnormal = "http://192.168.0.63:8084/ImpactWebService/rest/impactwebcall/GetChartNormalRangeMasterList?";
     Date outreachdatenddate;
     Date outreachfrom;
     Date currentdate;
@@ -288,20 +290,55 @@ public class DashboardActivityOutPro extends BaseActivity implements View.OnClic
         String lastVersion = SharedPreference.get(PrefKeys.LAST_SEEN_VERSION);
 
         if (lastVersion == null || !currentVersion.equals(lastVersion)) {
-            showWhatsNewDialog();
+            showWhatsNewBottomSheet();
 
             SharedPreference.save(PrefKeys.LAST_SEEN_VERSION, currentVersion);
         }
     }
 
-    private void showWhatsNewDialog() {
-        new AlertDialog.Builder(this)
-                .setTitle("What's New in this version")
-                .setMessage("✨ Latest Updates:\n\n" +
-                        "• Improve Functionality\n" +
-                        "• Bug fixes\n")
-                .setPositiveButton("Got it", null)
-                .show();
+    private void showWhatsNewBottomSheet() {
+        try {
+            String versionName = getPackageManager()
+                    .getPackageInfo(getPackageName(), 0).versionName;
+
+            final com.google.android.material.bottomsheet.BottomSheetDialog bottomSheetDialog =
+                    new com.google.android.material.bottomsheet.BottomSheetDialog(this, R.style.CustomBottomSheetDialog);
+
+            View view = getLayoutInflater().inflate(R.layout.layout_whats_new_bottomsheet, null);
+            bottomSheetDialog.setContentView(view);
+
+            // Set title + message
+            TextView titleText = view.findViewById(R.id.titleText);
+            TextView messageText = view.findViewById(R.id.messageText);
+            Button btnGotIt = view.findViewById(R.id.btnGotIt);
+
+            if (titleText != null) {
+                titleText.setText("What's New in version " + versionName);
+            }
+            if (messageText != null) {
+                messageText.setText("✨ Latest Updates:\n\n• Faster performance\n• Bug fixes\n• New dashboard UI");
+            }
+
+            if (btnGotIt != null) {
+                btnGotIt.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        bottomSheetDialog.dismiss();
+                    }
+                });
+            }
+
+            // Show with delay for smooth effect
+            new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    bottomSheetDialog.show();
+                }
+            }, 600); // 600ms delay
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
 
@@ -313,16 +350,18 @@ public class DashboardActivityOutPro extends BaseActivity implements View.OnClic
     public void getuploaddatafromSqlite() {
         asha = PadaNAshworkerDetailModel.getallpadadetails(SharedPreference.get("CAMPID"));
         Log.i("Data=>", asha.size() + "");
+
         if (asha.size() > 0) {
+            // Convert to JSON
             Gson gson = new Gson();
-            JsonElement element = gson.toJsonTree(asha, new TypeToken<List<PadaNAshworkerDetailModel>>() {
-            }.getType());
+            JsonElement element = gson.toJsonTree(asha, new TypeToken<List<PadaNAshworkerDetailModel>>() {}.getType());
             JsonArray jsonArray = element.getAsJsonArray();
             Log.i("ckm=>jsonarray", jsonArray + "");
+
             object = new JsonObject();
             object.add("outreachdata", jsonArray);
             Log.i("ckm=>jsonobject", object + "");
-            Log.i("JSONARRAY", object + "");
+
             try {
                 jo2 = new JSONObject(object.toString());
                 Log.i("JSON_OBJECT", jo2 + "");
@@ -330,10 +369,16 @@ public class DashboardActivityOutPro extends BaseActivity implements View.OnClic
                 e.printStackTrace();
             }
 
+            synchfail = false;
+            callService();  // Only call if there is data
+
+        } else {
+            // No data to sync
+            Toast.makeText(DashboardActivityOutPro.this, "No data to sync", Toast.LENGTH_LONG).show();
+            Log.i("ckm=>synch", "No data found in SQLite to sync");
         }
-        callService();
-        synchfail = false;
     }
+
 
     private void getchartNormalRangeMaster() {
         showProgDialog(DashboardActivityOutPro.this);
@@ -728,8 +773,6 @@ public class DashboardActivityOutPro extends BaseActivity implements View.OnClic
 
                         }
                     })
-
-                    // A null listener allows the button to dismiss the dialog and take no further action.
                     .setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
@@ -740,8 +783,6 @@ public class DashboardActivityOutPro extends BaseActivity implements View.OnClic
         } else {
             longToast("camp already completed no data found");
         }
-
-
     }
 
     public void showCampoption() {
@@ -777,23 +818,48 @@ public class DashboardActivityOutPro extends BaseActivity implements View.OnClic
         });
         builder.show();
     }
-
+    @SuppressWarnings("deprecation")
     private void aboutUsDialogueBox() {
         try {
-            // Get app name from resources
             String appName = getString(R.string.app_name);
-
-            // Get version name from PackageManager
             String versionName = getPackageManager()
                     .getPackageInfo(getPackageName(), 0).versionName;
 
-            // Build About Us message
-            String message = appName + "\nVersion: " + versionName;
+            LayoutInflater inflater = LayoutInflater.from(this);
+            View view = inflater.inflate(R.layout.dialog_about_us, null);
 
-            // Show AlertDialog
+            TextView aboutText = view.findViewById(R.id.about_text);
+
+            String message = "<b>" + appName + "</b><br><br>" +
+                    "Impact India Foundation’s Outreach App is meant for the use of " +
+                    "<b>Lifeline Express Outreach team</b> and <b>volunteers</b> associated with each camp of Impact India Foundation’s Lifeline Express. " +
+                    "Volunteers and staff involved in outreach activities, before the actual camp begins, use this app for entering demographic and basic health parameters of serviced population.<br><br>" +
+                    "This app is an effort of Impact India Foundation to maintain complete data of all beneficiaries of Lifeline Express camps digitally, " +
+                    "for the sake of transparency, analytics and improving quality of healthcare delivery to the served community.<br><br>" +
+                    "You are currently using <b>version " + versionName + "</b> of the LLE Outreach App.";
+
+            aboutText.setText(Html.fromHtml(message));
+
+            VideoView logoVideo = view.findViewById(R.id.logo_video);
+
+            Uri videoUri = Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.logo_animation);
+
+            logoVideo.setVideoURI(videoUri);
+            logoVideo.setMediaController(null); // optional, hides controls
+
+            logoVideo.setOnPreparedListener(mp -> {
+                mp.setLooping(true);   // loop forever
+                logoVideo.start();
+            });
+
+            logoVideo.setOnErrorListener((mp, what, extra) -> {
+                return false;
+            });
+
+
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setTitle("About Us")
-                    .setMessage(message)
+                    .setView(view)
                     .setPositiveButton("OK", null)
                     .show();
 
@@ -802,7 +868,6 @@ public class DashboardActivityOutPro extends BaseActivity implements View.OnClic
         }
     }
 
-
     private void camp_completed_operation() {
         String msg = " Are you sure to complete the camp ?";
         new AlertDialog.Builder(this)
@@ -810,13 +875,11 @@ public class DashboardActivityOutPro extends BaseActivity implements View.OnClic
                 .setMessage(msg)
                 .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
-                        // Continue with camp completion and delete operation
                         Send_camp_complete_status(SharedPreference.get("CAMPID"), SharedPreference.get("Userid"), formattedDate);
 
                     }
                 })
 
-                // A null listener allows the button to dismiss the dialog and take no further action.
                 .setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
@@ -892,10 +955,6 @@ public class DashboardActivityOutPro extends BaseActivity implements View.OnClic
         });
         AppController.getInstance().add(jsonObjectRequest);
     }
-
-
-
-
 
     public void showReports() {
         List<String> patientOpt;
@@ -1075,24 +1134,10 @@ public class DashboardActivityOutPro extends BaseActivity implements View.OnClic
         }
     }
 
-    boolean doubleBackToExitPressedOnce = false;
-
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        if (doubleBackToExitPressedOnce) {
-            // finishAffinity();
-            finish();
-            return;
-        }
-        this.doubleBackToExitPressedOnce = true;
-        Toast.makeText(this, "Please click BACK again to exit", Toast.LENGTH_SHORT).show();
-        new Handler().postDelayed(new Runnable() {
-
-            @Override
-            public void run() {
-                doubleBackToExitPressedOnce = false;
-            }
-        }, 2000);
+        Intent i = new Intent(this, MultipleCampActivity.class);
+        startActivity(i);
     }
 }

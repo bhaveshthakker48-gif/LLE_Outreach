@@ -263,11 +263,6 @@ public class DailyworkDashboardActivity extends BaseActivity implements AdapterV
                         txtoralcanceropd.setText(arrgetashpadacount.get(0).getOralcancercount());
                     }
                 }
-               /* else
-                {
-                    btnDetails.setVisibility(View.GONE);
-                    setpadainital();
-                }*/
             }
 
             @Override
@@ -359,7 +354,6 @@ public class DailyworkDashboardActivity extends BaseActivity implements AdapterV
         pada_spinner = findViewById(R.id.pada_spinner);
         txttotalpopulationcount = findViewById(R.id.txttotalpopulation);
         txttotalhousecount = findViewById(R.id.txttotalhouse);
-        //txteyeopdcount,txteyeopddetails
         txteyeopdcount = findViewById(R.id.txteyeopdcount);
         txteyeopddetails = findViewById(R.id.txteyeopddetails);
         txteyeopddetails.setOnClickListener(this);
@@ -518,16 +512,16 @@ public class DailyworkDashboardActivity extends BaseActivity implements AdapterV
                 Log.i("ckm=>subcenter",str_subcenter);
                 if (!str_subcenter.equals("Select Subcenter"))
                 {
-                    phc_spinner.setSelection(0);
-                    village_spinner.setSelection(0);
-                    pada_spinner.setSelection(0);
+//                    phc_spinner.setSelection(0);
+//                    village_spinner.setSelection(0);
+//                    pada_spinner.setSelection(0);
                     setpadainital();
                     btnDetails.setVisibility(View.GONE);
                     anmbtnDetails.setVisibility(View.GONE);
-                    asha_pada_spinner.setSelection(0);
-                    asha_worker_spn.setSelection(0);
-                    anm_pada_spinner.setSelection(0);
-                    anm_worker_spn.setSelection(0);
+//                    asha_pada_spinner.setSelection(0);
+//                    asha_worker_spn.setSelection(0);
+//                    anm_pada_spinner.setSelection(0);
+//                    anm_worker_spn.setSelection(0);
 
                     totalbysubcenter = PopulationMedicalModel.getAllOpdcountbyfilter("subcentre",str_subcenter,SharedPreference.get("CAMPID"),data1);
 
@@ -575,14 +569,14 @@ public class DailyworkDashboardActivity extends BaseActivity implements AdapterV
 
                 }
         } else if (viewId == R.id.village_spinner) {
-                phc_spinner.setSelection(0);
-                subcenter_spinner.setSelection(0);
-                pada_spinner.setSelection(0);
+//                phc_spinner.setSelection(0);
+//                subcenter_spinner.setSelection(0);
+//                pada_spinner.setSelection(0);
                 setpadainital();
-                asha_pada_spinner.setSelection(0);
-                asha_worker_spn.setSelection(0);
-                anm_pada_spinner.setSelection(0);
-                anm_worker_spn.setSelection(0);
+//                asha_pada_spinner.setSelection(0);
+//                asha_worker_spn.setSelection(0);
+//                anm_pada_spinner.setSelection(0);
+//                anm_worker_spn.setSelection(0);
                 btnDetails.setVisibility(View.GONE);
                 anmbtnDetails.setVisibility(View.GONE);
                 str_village = getvillage.get(position).getVillage();
@@ -633,14 +627,14 @@ public class DailyworkDashboardActivity extends BaseActivity implements AdapterV
                     }
                 }
         } else if (viewId == R.id.pada_spinner) {
-                phc_spinner.setSelection(0);
-                subcenter_spinner.setSelection(0);
-                village_spinner.setSelection(0);
+//                phc_spinner.setSelection(0);
+//                subcenter_spinner.setSelection(0);
+//                village_spinner.setSelection(0);
                // pada_spinner.setSelection(0);
-                asha_pada_spinner.setSelection(0);
-                asha_worker_spn.setSelection(0);
-                anm_pada_spinner.setSelection(0);
-                anm_worker_spn.setSelection(0);
+//                asha_pada_spinner.setSelection(0);
+//                asha_worker_spn.setSelection(0);
+//                anm_pada_spinner.setSelection(0);
+//                anm_worker_spn.setSelection(0);
                 setpadainital();
                 btnDetails.setVisibility(View.GONE);
                 anmbtnDetails.setVisibility(View.GONE);
@@ -692,13 +686,13 @@ public class DailyworkDashboardActivity extends BaseActivity implements AdapterV
                     }
                 }
         } else if (viewId == R.id.asha_worker_spn) {
-                phc_spinner.setSelection(0);
-                subcenter_spinner.setSelection(0);
-                village_spinner.setSelection(0);
-                pada_spinner.setSelection(0);
-                anm_pada_spinner.setSelection(0);
-                anm_worker_spn.setSelection(0);
-                asha_pada_spinner.setSelection(0);
+//                phc_spinner.setSelection(0);
+//                subcenter_spinner.setSelection(0);
+//                village_spinner.setSelection(0);
+//                pada_spinner.setSelection(0);
+//                anm_pada_spinner.setSelection(0);
+//                anm_worker_spn.setSelection(0);
+//                asha_pada_spinner.setSelection(0);
                 anmbtnDetails.setVisibility(View.GONE);
 
 
@@ -768,12 +762,12 @@ public class DailyworkDashboardActivity extends BaseActivity implements AdapterV
                     setpadainital();
                 }
         } else if (viewId == R.id.anm_worker_spn) {
-                phc_spinner.setSelection(0);
-                subcenter_spinner.setSelection(0);
-                village_spinner.setSelection(0);
-                pada_spinner.setSelection(0);
-                asha_pada_spinner.setSelection(0);
-                asha_worker_spn.setSelection(0);
+//                phc_spinner.setSelection(0);
+//                subcenter_spinner.setSelection(0);
+//                village_spinner.setSelection(0);
+//                pada_spinner.setSelection(0);
+//                asha_pada_spinner.setSelection(0);
+//                asha_worker_spn.setSelection(0);
                 str_anmwork = anmworker.get(position).getAnmname();
                 Log.i("anmworker",str_anmwork);
                 if (!str_anmwork.equals("Select"))
@@ -840,12 +834,12 @@ public class DailyworkDashboardActivity extends BaseActivity implements AdapterV
                     setpadainital();
                 }
         } else if (viewId == R.id.spinner_dashboard) {
-                phc_spinner.setSelection(0);
-                subcenter_spinner.setSelection(0);
-                village_spinner.setSelection(0);
-                pada_spinner.setSelection(0);
-                asha_pada_spinner.setSelection(0);
-                asha_worker_spn.setSelection(0);
+//                phc_spinner.setSelection(0);
+//                subcenter_spinner.setSelection(0);
+//                village_spinner.setSelection(0);
+//                pada_spinner.setSelection(0);
+//                asha_pada_spinner.setSelection(0);
+//                asha_worker_spn.setSelection(0);
                 data1 = newuserlist.get(position).getUserId().toString();
                 Log.i("ckm=>Data",data1);
                 gethouseNpopulationCount(data1);
@@ -1508,5 +1502,10 @@ public class DailyworkDashboardActivity extends BaseActivity implements AdapterV
                     }
                 }
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
     }
 }

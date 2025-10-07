@@ -49,16 +49,6 @@ public class BaseActivity extends AppCompatActivity {
         imm.hideSoftInputFromWindow(edt.getWindowToken(), 0);
     }
 
-    protected String getCurrentDate() {
-        SimpleDateFormat sdf = new SimpleDateFormat(AttributeSet.Constants.REVERSE_SHORT_DATE);
-        return sdf.format(System.currentTimeMillis());
-    }
-
-    protected String getCurrentDateTime() {
-        SimpleDateFormat sdf = new SimpleDateFormat(AttributeSet.Constants.MODIFIED_DATE_FORMAT);
-        return sdf.format(System.currentTimeMillis());
-    }
-
     public void showProgDialog(Context context) {
         if (context.getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
             ((Activity)context).setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
@@ -67,7 +57,6 @@ public class BaseActivity extends AppCompatActivity {
         }
         if (progressDialog == null || !progressDialog.isShowing()) {
             progressDialog = new ProgressDialog(context, R.style.prog_diag_style);
-//            progressDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
             progressDialog.setCancelable(false);
             progressDialog.setIndeterminate(true);
             progressDialog.show();

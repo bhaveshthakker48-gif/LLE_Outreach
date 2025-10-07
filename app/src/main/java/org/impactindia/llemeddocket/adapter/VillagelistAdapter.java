@@ -1,6 +1,7 @@
 package org.impactindia.llemeddocket.adapter;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -56,37 +57,44 @@ public class VillagelistAdapter extends ArrayAdapter<PhcUserData> {
     Filter nameFilter = new Filter() {
         @Override
         public CharSequence convertResultToString(Object resultValue) {
-            String str = ((PhcUserData) resultValue).getVillage();
-            return str;
+            return ((PhcUserData) resultValue).getVillage();
         }
 
         @Override
         protected FilterResults performFiltering(CharSequence constraint) {
-            if (constraint != null) {
+            Log.i("VillageFilter", "performFiltering called | constraint = " + constraint);
+
+            FilterResults filterResults = new FilterResults();
+            if (constraint != null && constraint.length() > 0) {
                 suggestions.clear();
                 for (PhcUserData people : tempItems) {
                     if (people.getVillage().toLowerCase().contains(constraint.toString().toLowerCase())) {
                         suggestions.add(people);
                     }
                 }
-                FilterResults filterResults = new FilterResults();
+                Log.i("VillageFilter", "Filtered size = " + suggestions.size());
                 filterResults.values = suggestions;
                 filterResults.count = suggestions.size();
-                return filterResults;
             } else {
-                return new FilterResults();
+                // ✅ Show all villages when text is empty
+                Log.i("VillageFilter", "Empty text -> returning full list size = " + tempItems.size());
+                filterResults.values = new ArrayList<>(tempItems);
+                filterResults.count = tempItems.size();
             }
+            return filterResults;
         }
 
         @Override
         protected void publishResults(CharSequence constraint, FilterResults results) {
-            List<PhcUserData> filterList = (ArrayList<PhcUserData>) results.values;
+            Log.i("VillageFilter", "publishResults called | count = " + results.count);
+
             if (results != null && results.count > 0) {
                 clear();
-                for (PhcUserData people : filterList) {
-                    add(people);
-                    notifyDataSetChanged();
-                }
+                addAll((List<PhcUserData>) results.values);
+                notifyDataSetChanged();
+                Log.i("VillageFilter", "Adapter updated with size = " + getCount());
+            } else {
+                Log.i("VillageFilter", "No results to publish");
             }
         }
     };

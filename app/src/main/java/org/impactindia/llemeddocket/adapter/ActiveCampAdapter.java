@@ -21,7 +21,10 @@ import org.impactindia.llemeddocket.ui.activity.BaseActivity;
 import org.impactindia.llemeddocket.ui.activity.DashboardActivityOutPro;
 import org.impactindia.llemeddocket.util.SharedPreference;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.Locale;
 
 public class ActiveCampAdapter extends RecyclerView.Adapter<ActiveCampAdapter.UserViewHolder> {
 
@@ -61,8 +64,8 @@ public class ActiveCampAdapter extends RecyclerView.Adapter<ActiveCampAdapter.Us
         holder.txt_state.setText("State: " + outreachPlanData.getState());
         holder.txtdistric.setText("Distric: " + outreachPlanData.getDistric());
         holder.txttaluka.setText("Taluka: " + outreachPlanData.getTaluka());
-        holder.txtoutreachfrom.setText("From: " + outreachPlanData.getOutreach_From());
-        holder.txtoutreachto.setText("To: " + outreachPlanData.getOutreach_To());
+        holder.txtoutreachfrom.setText("From: " + formatDate(outreachPlanData.getOutreach_From()));
+        holder.txtoutreachto.setText("To: " + formatDate(outreachPlanData.getOutreach_To()));
 
         holder.llmessage_view.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -79,6 +82,18 @@ public class ActiveCampAdapter extends RecyclerView.Adapter<ActiveCampAdapter.Us
         });
 
 
+    }
+
+    private String formatDate(String inputDate) {
+        try {
+            SimpleDateFormat inputFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
+            SimpleDateFormat outputFormat = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault());
+            Date date = inputFormat.parse(inputDate);
+            return outputFormat.format(date);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return inputDate; // return original if parsing fails
+        }
     }
 
 

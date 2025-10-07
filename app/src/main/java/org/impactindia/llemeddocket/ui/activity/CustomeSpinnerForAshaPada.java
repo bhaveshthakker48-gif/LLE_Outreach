@@ -44,7 +44,6 @@ public class CustomeSpinnerForAshaPada extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         convertView = inflter.inflate(R.layout.village_list_item, null);
         TextView names =(TextView)convertView.findViewById(R.id.txtvillages);
-        // names.setText(userdata.get(position).getSubCenter());
         names.setText(userdata.get(position).getPada());
         return convertView;
 

@@ -115,7 +115,7 @@ public class ViewDetailsActivity extends BaseActivity {
         txt_fmlname.setText(getdataforupdate.get(0).getTitle() + " " + getdataforupdate.get(0).getFname() + " " + getdataforupdate.get(0).getMname() + " " + getdataforupdate.get(0).getLname());
         txt_Gender.setText(getdataforupdate.get(0).getGender());
         txt_dob.setText(getddmmyyy(getdataforupdate.get(0).getDob()));
-        txt_Age.setText(String.valueOf(getdataforupdate.get(0).getAge()) + " " + "Years");
+        txt_Age.setText(String.valueOf(getdataforupdate.get(0).getAge()) + " " + String.valueOf(getdataforupdate.get(0).getAgeunit()));
         txt_Pincode.setText(String.valueOf(getdataforupdate.get(0).getPincode()));
         txt_mobileNo.setText(getdataforupdate.get(0).getMobileno());
         txt_StreetName.setText(getdataforupdate.get(0).getStreetname());

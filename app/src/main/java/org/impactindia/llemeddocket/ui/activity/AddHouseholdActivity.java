@@ -343,9 +343,6 @@ public class AddHouseholdActivity extends BaseActivity implements AdapterView.On
     };
 
 
-
-
-
     private AdapterView.OnItemSelectedListener spnAgeUnitListener = new AdapterView.OnItemSelectedListener() {
 
         @Override
@@ -398,7 +395,6 @@ public class AddHouseholdActivity extends BaseActivity implements AdapterView.On
         public void onTextChanged(CharSequence s, int start, int before, int count) {
             if (!isEmpty(edtage.getText().toString()))
             {
-              //  txtLeftEyeInterp.setText(EYEInter(leyenearvalue.getText().toString(),leyedistancevalue.getText().toString()));
               setDOB(houshold_spnAgeUnit.getSelectedItemPosition() == 0 ? "Years" : houshold_spnAgeUnit.getSelectedItem().toString(),Integer.parseInt(edtage.getText().toString()));
             }
         }
@@ -741,7 +737,6 @@ public class AddHouseholdActivity extends BaseActivity implements AdapterView.On
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.population_list,menu);
         return true;
-       // return super.onCreateOptionsMenu(menu);
     }
 
 
@@ -761,6 +756,8 @@ public class AddHouseholdActivity extends BaseActivity implements AdapterView.On
     @Override
     public void onBackPressed() {
         super.onBackPressed();
+        Intent i = new Intent(this,DashboardActivityOutPro.class);
+        startActivity(i);
         displayalert();
     }
 
@@ -771,15 +768,12 @@ public class AddHouseholdActivity extends BaseActivity implements AdapterView.On
                 .setMessage("Do you want to go home screen ?")
                 .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
-                        // Continue with delete operation
-
                         Intent i = new Intent(AddHouseholdActivity.this,DashboardActivityOutPro.class);
                         startActivity(i);
                         finish();
                     }
                 })
 
-                // A null listener allows the button to dismiss the dialog and take no further action.
                 .setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {

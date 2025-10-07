@@ -494,7 +494,7 @@ public class HealthDataActivity extends BaseActivity implements AdapterView.OnIt
          Log.i("BMI_DEBUG", "BMI: " + bmi + " | Age (months): " + month);
 
          if (month < 24) {
-             return "Below two year age (BMI interpretation not applicable)";
+             return "UnderAge";
          }
          else if (month >= 24 && month < 60)
          {
@@ -509,7 +509,7 @@ public class HealthDataActivity extends BaseActivity implements AdapterView.OnIt
                  normalrangedata = ChartNormalRangeModel.getmatchresult(commonmasterdata.get(0).getChartid(),String.valueOf(month));
              }
 
-             return "Below five year age";
+             return "UnderAge";
          }
          else if (month >= 60 && month <= 216)
          {
@@ -741,30 +741,6 @@ public class HealthDataActivity extends BaseActivity implements AdapterView.OnIt
         }
         return (heightInFeet * 30.48) + (heightInInches * 2.54);
     }
-
-//    public String displayBMI(float bmi) {
-//        String bmiLabel = "";
-//
-//        if (Float.compare(bmi, 15f) <= 0) {
-//            bmiLabel = "very_severely_underweight";
-//        } else if (Float.compare(bmi, 15f) > 0  &&  Float.compare(bmi, 16f) <= 0) {
-//            bmiLabel = "severely_underweight";
-//        } else if (Float.compare(bmi, 16f) > 0  &&  Float.compare(bmi, 18.5f) <= 0) {
-//            bmiLabel = "underweight";
-//        } else if (Float.compare(bmi, 18.5f) > 0  &&  Float.compare(bmi, 25f) <= 0) {
-//            bmiLabel = "normal";
-//        } else if (Float.compare(bmi, 25f) > 0  &&  Float.compare(bmi, 30f) <= 0) {
-//            bmiLabel = "overweight";
-//        } else if (Float.compare(bmi, 30f) > 0  &&  Float.compare(bmi, 35f) <= 0) {
-//            bmiLabel = "obese_class_i";
-//        } else if (Float.compare(bmi, 35f) > 0  &&  Float.compare(bmi, 40f) <= 0) {
-//            bmiLabel = "obese_class_ii";
-//        } else {
-//            bmiLabel = "obese_class_iii";
-//        }
-//        bmiLabel = String.valueOf(bmi);
-//        return  bmiLabel;
-//    }
 
     public String displayBMI(float bmi) {
         return String.format(Locale.US, "%.2f", bmi); // e.g. 22.35

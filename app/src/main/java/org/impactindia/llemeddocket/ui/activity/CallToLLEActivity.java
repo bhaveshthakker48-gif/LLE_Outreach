@@ -58,7 +58,7 @@ public class CallToLLEActivity extends BaseActivity implements AdapterView.OnIte
     ArrayList<String> dsa = new ArrayList<>();
     ArrayAdapter<String> adapter_eye;
     ArrayAdapter<String> adapter_epf, adapter_catract, adapter_oralprblm, adapter_congenitalab, adapter_hearingdefect, adapter_earprblm, adapter_gynac, adapter_cancer;
-    Button btnAddlldata,btnAddnewhousedata;
+    Button btnAddlldata,btnAddnewhousedata, btnSubmit;
     ArrayList<String> catractarr = new ArrayList<String>();
     ArrayList<String> epfarr = new ArrayList<String>();
     ArrayList<String> eyeopd = new ArrayList<String>();
@@ -216,7 +216,6 @@ public class CallToLLEActivity extends BaseActivity implements AdapterView.OnIte
 
             earprblm = new ArrayList<String>();
             earprblm = getdatelist(Fromdate, Todate);
-            //earprblm = getdatelist(data7.get(0).getCampfrom(),data7.get(0).getCampto());
             adapter_earprblm = new ArrayAdapter<String>(this, R.layout.spinner_item, R.id.itemText, earprblm);
             lleearprblmspinner.setAdapter(adapter_earprblm);
         } else {
@@ -244,22 +243,17 @@ public class CallToLLEActivity extends BaseActivity implements AdapterView.OnIte
             llgynace.setVisibility(View.GONE);
         }
 
-
-
-        btnAddnewhousedata.setOnClickListener(new View.OnClickListener() {
+        btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 PopMedicalData pop = new PopMedicalData();
                 if (SharedPreference.get("LEFTEYEINTER").equals("abnormal") || SharedPreference.get("RIGHTEYEINTER").equals("abnormal")) {
-
-                    //    pop.setEyeopd(llevisualacuspinner.getSelectedItemPosition() == 0 ? getyyyymmdd(strvisual): getyyyymmdd(llevisualacuspinner.getSelectedItem().toString()));
                     if (!isEmpty(strvisual)) {
                         pop.setEyeopd(getyyyymmdd(strvisual));
                     }
 
                 }
                 if (SharedPreference.get("LLECATARACT").equals("Yes")) {
-                    //pop.setEyesurgery(llecataractspinner.getSelectedItemPosition() == 0 ? getyyyymmdd(strcataract):getyyyymmdd(llecataractspinner.getSelectedItem().toString()));
                     if (!isEmpty(strcataract)) {
                         pop.setEyesurgery(getyyyymmdd(strcataract));
                     }
@@ -267,7 +261,6 @@ public class CallToLLEActivity extends BaseActivity implements AdapterView.OnIte
                     pop.setEyesurgery(llecataractspinner.getSelectedItemPosition() == 0 ? null : null);
                 }
                 if (SharedPreference.get("LLEEPF").equals("Yes")) {
-                    //pop.setEpilepsyopd(lleEpilepsyspinner.getSelectedItemPosition() == 0 ? getyyyymmdd(strepf):getyyyymmdd(lleEpilepsyspinner.getSelectedItem().toString()));
                     pop.setEpilepsyopd(getyyyymmdd(strepf));
                 } else {
                     pop.setEpilepsyopd(lleEpilepsyspinner.getSelectedItemPosition() == 0 ? null : null);
@@ -283,44 +276,100 @@ public class CallToLLEActivity extends BaseActivity implements AdapterView.OnIte
                 }
 
                 if (SharedPreference.get("LLEORALPRBM").equals("Yes")) {
-
-                    //pop.setDentalopd(lleoralspinner.getSelectedItemPosition() == 0 ? getyyyymmdd(strlloral):getyyyymmdd(lleoralspinner.getSelectedItem().toString()));
                     pop.setDentalopd(getyyyymmdd(strlloral));
                 } else {
                     pop.setDentalopd(lleoralspinner.getSelectedItemPosition() == 0 ? null : null);
                 }
 
                 if (SharedPreference.get("LLECONGITAL").equals("Cleft Lip")) {
-                    //pop.setPlasticsurgeryopd(lleCongABspinner.getSelectedItemPosition() == 0 ? getyyyymmdd(strcong) : getyyyymmdd(lleCongABspinner.getSelectedItem().toString()));
                     pop.setPlasticsurgeryopd(getyyyymmdd(strcong));
                 } else if (SharedPreference.get("LLECONGITAL").equals("Orthopaedic Deformities")) {
-                   // pop.setOrthopedicsurgery(lleCongABspinner.getSelectedItemPosition() == 0 ? getyyyymmdd(strcong) : getyyyymmdd(lleCongABspinner.getSelectedItem().toString()));
                     pop.setOrthopedicsurgery(getyyyymmdd(strcong));
                 } else {
                     pop.setOrthopedicsurgery(null);
                 }
 
-
                 if (!isEmpty(SharedPreference.get("LLEEARPRBLM")) && !SharedPreference.get("LLEEARPRBLM").equals("Normal")) {
-
-                  //  pop.setEntopd(lleearprblmspinner.getSelectedItemPosition() == 0 ? getyyyymmdd(strear) : getyyyymmdd(lleearprblmspinner.getSelectedItem().toString()));
                     pop.setEntopd(getyyyymmdd(strear));
                 }
-
-               // if (!isEmpty(String.valueOf(SharedPreference.get("LLEGYNAEC").equals("Yes"))) && !isEmpty(String.valueOf(SharedPreference.get("GENDER").equals("Female")))) {
                 if (!isEmpty(SharedPreference.get("LLEGYNAEC")))
                 {
                     if (SharedPreference.get("LLEGYNAEC").equals("Yes") && SharedPreference.get("GENDER").equals("Female")) {
-
-                        // pop.setGynaecopd(llegynaecspinner.getSelectedItemPosition() == 0 ? getyyyymmdd(strgync) : getyyyymmdd(llegynaecspinner.getSelectedItem().toString()));
                         pop.setGynaecopd(getyyyymmdd(strgync));
-                       // pop.setGynaecopd(strgync);
                     } else {
                         pop.setGynaecopd(llegynaecspinner.getSelectedItemPosition() == 0 ? null : null);
                     }
                 }
 
+                Log.i("UpdateData=Data", pop.getEyeopd() + " " + pop.getEyesurgery() + " " + pop.getEpilepsyopd() + " " + pop.getDentalopd() + " " + pop.getEntopd() + " " + pop.getPlasticsurgeryopd() + "" +pop.getOrthopedicsurgery());
+                PopulationMedicalModel.UpdateCalltoll(SharedPreference.get("HOUSEHOLDID"), pop);
 
+                Intent i = new Intent(CallToLLEActivity.this, DashboardActivityOutPro.class);
+                i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                shortToast("Data submitted");
+                startActivity(i);
+                finish();
+            }
+        });
+
+
+        btnAddnewhousedata.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                PopMedicalData pop = new PopMedicalData();
+                if (SharedPreference.get("LEFTEYEINTER").equals("abnormal") || SharedPreference.get("RIGHTEYEINTER").equals("abnormal")) {
+                    if (!isEmpty(strvisual)) {
+                        pop.setEyeopd(getyyyymmdd(strvisual));
+                    }
+
+                }
+                if (SharedPreference.get("LLECATARACT").equals("Yes")) {
+                    if (!isEmpty(strcataract)) {
+                        pop.setEyesurgery(getyyyymmdd(strcataract));
+                    }
+                } else {
+                    pop.setEyesurgery(llecataractspinner.getSelectedItemPosition() == 0 ? null : null);
+                }
+                if (SharedPreference.get("LLEEPF").equals("Yes")) {
+                    pop.setEpilepsyopd(getyyyymmdd(strepf));
+                } else {
+                    pop.setEpilepsyopd(lleEpilepsyspinner.getSelectedItemPosition() == 0 ? null : null);
+                }
+
+                if (SharedPreference.get("LLECANCER").equals("Oral"))
+                {
+                    pop.setOralcanceropd(getyyyymmdd(strcancer));
+                }
+                else
+                {
+                    pop.setOralcanceropd(lleoralCancerspinner.getSelectedItemPosition() == 0 ? null : null);
+                }
+
+                if (SharedPreference.get("LLEORALPRBM").equals("Yes")) {
+                    pop.setDentalopd(getyyyymmdd(strlloral));
+                } else {
+                    pop.setDentalopd(lleoralspinner.getSelectedItemPosition() == 0 ? null : null);
+                }
+
+                if (SharedPreference.get("LLECONGITAL").equals("Cleft Lip")) {
+                    pop.setPlasticsurgeryopd(getyyyymmdd(strcong));
+                } else if (SharedPreference.get("LLECONGITAL").equals("Orthopaedic Deformities")) {
+                    pop.setOrthopedicsurgery(getyyyymmdd(strcong));
+                } else {
+                    pop.setOrthopedicsurgery(null);
+                }
+
+                if (!isEmpty(SharedPreference.get("LLEEARPRBLM")) && !SharedPreference.get("LLEEARPRBLM").equals("Normal")) {
+                    pop.setEntopd(getyyyymmdd(strear));
+                }
+                if (!isEmpty(SharedPreference.get("LLEGYNAEC")))
+                {
+                    if (SharedPreference.get("LLEGYNAEC").equals("Yes") && SharedPreference.get("GENDER").equals("Female")) {
+                        pop.setGynaecopd(getyyyymmdd(strgync));
+                    } else {
+                        pop.setGynaecopd(llegynaecspinner.getSelectedItemPosition() == 0 ? null : null);
+                    }
+                }
 
                 Log.i("UpdateData=Data", pop.getEyeopd() + " " + pop.getEyesurgery() + " " + pop.getEpilepsyopd() + " " + pop.getDentalopd() + " " + pop.getEntopd() + " " + pop.getPlasticsurgeryopd() + "" +pop.getOrthopedicsurgery());
                 PopulationMedicalModel.UpdateCalltoll(SharedPreference.get("HOUSEHOLDID"), pop);
@@ -339,18 +388,12 @@ public class CallToLLEActivity extends BaseActivity implements AdapterView.OnIte
             public void onClick(View v) {
 
                 PopMedicalData pop = new PopMedicalData();
-                //if (!SharedPreference.get("LEFTEYEINTER").equals("")|| !SharedPreference.get("RIGHTEYEINTER").equals("") || !SharedPreference.get("LEFTEYEINTER").equals("Normal") || !SharedPreference.get("RIGHTEYEINTER").equals("Normal"))
                 if (SharedPreference.get("LEFTEYEINTER").equals("abnormal") || SharedPreference.get("RIGHTEYEINTER").equals("abnormal")) {
-
-                    //    pop.setEyeopd(llevisualacuspinner.getSelectedItemPosition() == 0 ? getyyyymmdd(strvisual): getyyyymmdd(llevisualacuspinner.getSelectedItem().toString()));
                     if (!isEmpty(strvisual)) {
                         pop.setEyeopd(getyyyymmdd(strvisual));
                     }
-
                 }
-                // pop.setEyesurgery(llecataractspinner.getSelectedItemPosition() == 0 ? null:llecataractspinner.getSelectedItem().toString());
                 if (SharedPreference.get("LLECATARACT").equals("Yes")) {
-                    //pop.setEyesurgery(llecataractspinner.getSelectedItemPosition() == 0 ? getyyyymmdd(strcataract):getyyyymmdd(llecataractspinner.getSelectedItem().toString()));
                     if (!isEmpty(strcataract)) {
                         pop.setEyesurgery(getyyyymmdd(strcataract));
                     }
@@ -358,8 +401,6 @@ public class CallToLLEActivity extends BaseActivity implements AdapterView.OnIte
                     pop.setEyesurgery(llecataractspinner.getSelectedItemPosition() == 0 ? null : null);
                 }
                 if (SharedPreference.get("LLEEPF").equals("Yes")) {
-
-                    //pop.setEpilepsyopd(lleEpilepsyspinner.getSelectedItemPosition() == 0 ? getyyyymmdd(strepf):getyyyymmdd(lleEpilepsyspinner.getSelectedItem().toString()));
                     pop.setEpilepsyopd(getyyyymmdd(strepf));
                 } else {
                     pop.setEpilepsyopd(lleEpilepsyspinner.getSelectedItemPosition() == 0 ? null : null);
@@ -375,18 +416,14 @@ public class CallToLLEActivity extends BaseActivity implements AdapterView.OnIte
                 }
 
                 if (SharedPreference.get("LLEORALPRBM").equals("Yes")) {
-
-                    //pop.setDentalopd(lleoralspinner.getSelectedItemPosition() == 0 ? getyyyymmdd(strlloral):getyyyymmdd(lleoralspinner.getSelectedItem().toString()));
                     pop.setDentalopd(getyyyymmdd(strlloral));
                 } else {
                     pop.setDentalopd(lleoralspinner.getSelectedItemPosition() == 0 ? null : null);
                 }
 
                 if (SharedPreference.get("LLECONGITAL").equals("Cleft Lip")) {
-                  //  pop.setPlasticsurgeryopd(lleCongABspinner.getSelectedItemPosition() == 0 ? getyyyymmdd(strcong) : getyyyymmdd(lleCongABspinner.getSelectedItem().toString()));
                     pop.setPlasticsurgeryopd(getyyyymmdd(strcong));
                 } else if (SharedPreference.get("LLECONGITAL").equals("Orthopaedic Deformities")) {
-                 //   pop.setOrthopedicsurgery(lleCongABspinner.getSelectedItemPosition() == 0 ? getyyyymmdd(strcong) : getyyyymmdd(lleCongABspinner.getSelectedItem().toString()));
                     pop.setOrthopedicsurgery(getyyyymmdd(strcong));
                 } else {
                     pop.setOrthopedicsurgery(null);
@@ -394,19 +431,11 @@ public class CallToLLEActivity extends BaseActivity implements AdapterView.OnIte
 
 
                 if (!isEmpty(SharedPreference.get("LLEEARPRBLM")) && !SharedPreference.get("LLEEARPRBLM").equals("Normal")) {
-
-                   // pop.setEntopd(lleearprblmspinner.getSelectedItemPosition() == 0 ? getyyyymmdd(strear) : getyyyymmdd(lleearprblmspinner.getSelectedItem().toString()));
                     pop.setEntopd(getyyyymmdd(strear));
-                }/* else {
-                    pop.setEntopd(lleearprblmspinner.getSelectedItemPosition() == 0 ? null : null);
-                }*/
-
+                }
                if (!SharedPreference.get("GENDER").equals("Male"))
                {
                    if (SharedPreference.get("LLEGYNAEC").equals("Yes") && SharedPreference.get("GENDER").equals("Female")) {
-
-                       //pop.setGynaecopd(llegynaecspinner.getSelectedItemPosition() == 0 ? getyyyymmdd(strgync) : getyyyymmdd(llegynaecspinner.getSelectedItem().toString()));
-                      // pop.setGynaecopd(strgync);
                        pop.setGynaecopd(getyyyymmdd(strgync));
                    } else {
                        pop.setGynaecopd(llegynaecspinner.getSelectedItemPosition() == 0 ? null : null);
@@ -416,8 +445,6 @@ public class CallToLLEActivity extends BaseActivity implements AdapterView.OnIte
                {
                    pop.setGynaecopd(null);
                }
-
-
 
                 Log.i("UpdateData=Data", pop.getEyeopd() + " " + pop.getEyesurgery() + " " + pop.getEpilepsyopd() + " " + pop.getDentalopd() + " " + pop.getEntopd() + " " + pop.getPlasticsurgeryopd() + "" +pop.getOrthopedicsurgery());
                 PopulationMedicalModel.UpdateCalltoll(SharedPreference.get("HOUSEHOLDID"), pop);
@@ -441,14 +468,13 @@ public class CallToLLEActivity extends BaseActivity implements AdapterView.OnIte
             }
         });
 
-        //Code For Data Update
-
         Bundle bundle = getIntent().getExtras();
         if (bundle != null) {
             editid = bundle.getString("EDITID");
             getdataforupdate = PopulationMedicalModel.getdataforupdate(editid);
             btnAddlldata.setText("Update");
             btnAddnewhousedata.setVisibility(View.GONE);
+            btnSubmit.setVisibility(View.GONE);
 
 
             if (!isEmpty(getdataforupdate.get(0).getEyeopd())) {
@@ -559,7 +585,6 @@ public class CallToLLEActivity extends BaseActivity implements AdapterView.OnIte
     }
 
     private void init() {
-
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
@@ -576,6 +601,7 @@ public class CallToLLEActivity extends BaseActivity implements AdapterView.OnIte
         llvisualAc = findViewById(R.id.llvisualAc);
         btnAddlldata = findViewById(R.id.btnAddlldata);
         btnAddnewhousedata = findViewById(R.id.btnAddnewhousedata);
+        btnSubmit = findViewById(R.id.btnSubmit);
         lle_cancer = findViewById(R.id.lle_cancer);
         lleoralCancerspinner = findViewById(R.id.lleoralCancerspinner);
 
@@ -635,8 +661,6 @@ public class CallToLLEActivity extends BaseActivity implements AdapterView.OnIte
             e.printStackTrace();
         }
         String dateString2 = new SimpleDateFormat("yyyy-MM-dd").format(date);
-        //  System.out.println(dateString2); // 2011-
-        //Log.i("ckm=>convertedDate",dateString2);
         return dateString2;
     }
 
@@ -649,8 +673,6 @@ public class CallToLLEActivity extends BaseActivity implements AdapterView.OnIte
             e.printStackTrace();
         }
         String dateString2 = new SimpleDateFormat("dd-MM-yyyy").format(date);
-        //  System.out.println(dateString2); // 2011-
-        //Log.i("ckm=>convertedDate",dateString2);
         return dateString2;
     }
 
@@ -703,6 +725,6 @@ public class CallToLLEActivity extends BaseActivity implements AdapterView.OnIte
     public void onBackPressed() {
         super.onBackPressed();
         startActivity(new Intent(CallToLLEActivity.this,DashboardActivityOutPro.class));
-        finishAffinity();
+//        finishAffinity();
     }
 }

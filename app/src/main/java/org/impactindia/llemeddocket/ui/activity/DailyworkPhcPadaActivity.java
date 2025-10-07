@@ -93,7 +93,6 @@ public class DailyworkPhcPadaActivity extends BaseActivity implements AdapterVie
                     Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
                     Insets ime = insets.getInsets(WindowInsetsCompat.Type.ime());
 
-                    // pick whichever is larger (IME when keyboard visible)
                     int bottom = Math.max(systemBars.bottom, ime.bottom);
 
                     view.setPadding(systemBars.left, systemBars.top, systemBars.right, bottom);
@@ -272,7 +271,6 @@ public class DailyworkPhcPadaActivity extends BaseActivity implements AdapterVie
                         spinner_subcentre.getSelectedItemPosition() == 0 ? subcenterdata.get(0).getSubcenter(): spnStrSubcenter,selet_village.getText().toString(),selet_pada.getText().toString(),SharedPreference.get("CAMPID"));
                     if (checkdata.size() > 0)
                     {
-                        //edtanmName,edtanmMobno,edtashaname,edtashamobileno,edtgrampanchyatname,edtcontactperson,edtcontmobileno
                         if (!isEmpty(checkdata.get(0).getAnmname()))
                         {
                             edtanmName.setText(checkdata.get(0).getAnmname());
@@ -485,11 +483,8 @@ public class DailyworkPhcPadaActivity extends BaseActivity implements AdapterVie
                PhcSubCenterModel.open();
 
                subcenterdata = PhcUsersModel.getSubCenterByUserID(SharedPreference.get("Userid"),userdata.get(position).getPhc(),SharedPreference.get("CAMPID"));
-             //  CustomSpinnerSubCenter subCenteradapter = new CustomSpinnerSubCenter(this,subcenterdata);
                SpinnerSubCenters spinnersubcenters = new SpinnerSubCenters(this,subcenterdata);
                spinner_subcentre.setAdapter(spinnersubcenters);
-               
-
                String item = String.valueOf(parent.getItemAtPosition(position));
                Log.i("ckm=>selectedPosition",item);
         } else if (viewId == R.id.spinner_subcentre) {
@@ -515,7 +510,7 @@ public class DailyworkPhcPadaActivity extends BaseActivity implements AdapterVie
     }
 
     private void loadvillages() {
-      //  selet_village.setAdapter(new CustomAutocomVillageAdapter(getApplicationContext(), getvillage));
+        //  selet_village.setAdapter(new CustomAutocomVillageAdapter(getApplicationContext(), getvillage));
         villagelistAdapter = new VillagelistAdapter(this,R.layout.activity_dailywork_phc_pada,R.id.auto_text,getvillage);
         selet_village.setAdapter(villagelistAdapter);
         selet_village.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -551,16 +546,24 @@ public class DailyworkPhcPadaActivity extends BaseActivity implements AdapterVie
         selet_village.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
-                if (hasFocus)
-                {
+                if (hasFocus) {
+                    Log.i("VillageDropDown", "TextBox focused, showing dropdown");
                     selet_village.showDropDown();
-                }
-                else
-                {
+                } else {
+                    Log.i("VillageDropDown", "TextBox lost focus, hiding dropdown");
                     selet_village.dismissDropDown();
                 }
             }
         });
+
+        selet_village.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.i("VillageDropDown", "Textbox clicked, forcing dropdown open");
+                selet_village.showDropDown();
+            }
+        });
+
 
     }
 
@@ -604,7 +607,13 @@ public class DailyworkPhcPadaActivity extends BaseActivity implements AdapterVie
                 return false;
             }
         });
+    }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent i = new Intent(this,DashboardActivityOutPro.class);
+        startActivity(i);
     }
 }
 

@@ -35,10 +35,10 @@ import java.util.List;
 
 public class BMIInterprettionActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
-    TextView txtunderweight,txtcountnormalbmi,txtoverweight,txtoverweight1,txtobese,txtobesegrade2,txtmoderateobesity3,txtmorbidobesityiv,txt_totalbmicount,txt_datanotavailable;
-    TextView tvtunderweight,tvNormalperbmi,tvoverweightper,tvoverweightper1,tvobeseper,txtmoderateobesityper3,txtmorbidobesityperiv,txtdatanotavailbleper,txtobesegrade2per;
+    TextView txtageunder, txtageBtntwoFive, txtunderweight,txtcountnormalbmi,txtoverweight,txtoverweight1,txtobese,txtobesegrade2,txtmoderateobesity3,txtmorbidobesityiv,txt_totalbmicount,txt_datanotavailable;
+    TextView tvtageunder, tvtageBtntwoFive, tvtunderweight,tvNormalperbmi,tvoverweightper,tvoverweightper1,tvobeseper,txtmoderateobesityper3,txtmorbidobesityperiv,txtdatanotavailbleper,txtobesegrade2per;
     Toolbar toolbar;
-    Float underwaitper,normalper,overweightper,overweight1per,obeseper,obesegrade2per,moderateob3per,morbidiv_per,dna_per;
+    Float underAge, underwaitper,normalper,overweightper,overweight1per,obeseper,obesegrade2per,moderateob3per,morbidiv_per,dna_per;
     PieChart pie_chart;
     ArrayList<UserDetails> newuserlist = new ArrayList<>();
 
@@ -88,56 +88,52 @@ public class BMIInterprettionActivity extends AppCompatActivity implements Adapt
             data1 = String.valueOf(newuserlist.get(0).getUserId());
             setcount(data1);
         }
-       /* setcount();
-        findper();
-        drawpiechart();*/
     }
-
     private void drawpiechart() {
-
         List<ChartData> data = new ArrayList<>();
 
-        if (!tvtunderweight.getText().toString().equals("0.0"))
-        {
+        if (!tvtageunder.getText().toString().equals(0.0)){
+            data.add(new ChartData(tvtageunder.getText().toString() + "%", underAge, Color.WHITE, Color.parseColor("#42A5F5")));
+        }
+        if (!tvtunderweight.getText().toString().equals("0.0")) {
             data.add(new ChartData(tvtunderweight.getText().toString() + "%", underwaitper, Color.WHITE, Color.parseColor("#FFA726")));
         }
-        if (!tvNormalperbmi.getText().toString().equals("0.0"))
-        {
+        if (!tvNormalperbmi.getText().toString().equals("0.0")) {
             data.add(new ChartData(tvNormalperbmi.getText().toString() + "%", normalper, Color.WHITE, Color.parseColor("#000000")));
         }
-        if (!tvoverweightper.getText().toString().equals("0.0"))
-        {
+        if (!tvoverweightper.getText().toString().equals("0.0")) {
             data.add(new ChartData(tvoverweightper.getText().toString() + "%", overweightper, Color.WHITE, Color.parseColor("#C6FF00")));
         }
-        if (!tvoverweightper1.getText().toString().equals("0.0"))
-        {
+        if (!tvoverweightper1.getText().toString().equals("0.0")) {
             data.add(new ChartData(tvoverweightper1.getText().toString() + "%", overweight1per, Color.WHITE, Color.parseColor("#A7FFEB")));
         }
-        if (!tvobeseper.getText().toString().equals("0.0"))
-        {
+        if (!tvobeseper.getText().toString().equals("0.0")) {
             data.add(new ChartData(tvobeseper.getText().toString() + "%", obeseper, Color.WHITE, Color.parseColor("#66BB6A")));
         }
-        if (!txtobesegrade2per.getText().toString().equals("0.0"))
-        {
+        if (!txtobesegrade2per.getText().toString().equals("0.0")) {
             data.add(new ChartData(txtobesegrade2per.getText().toString() + "%", obesegrade2per, Color.WHITE, Color.parseColor("#FFCDD2")));
         }
-        if (!txtmoderateobesityper3.getText().toString().equals("0.0"))
-        {
+        if (!txtmoderateobesityper3.getText().toString().equals("0.0")) {
             data.add(new ChartData(txtmoderateobesityper3.getText().toString() + "%", moderateob3per, Color.WHITE, Color.parseColor("#FFCDD2")));
         }
-        if (!txtmorbidobesityperiv.getText().toString().equals("0.0"))
-        {
+        if (!txtmorbidobesityperiv.getText().toString().equals("0.0")) {
             data.add(new ChartData(txtmorbidobesityperiv.getText().toString() + "%", morbidiv_per, Color.WHITE, Color.parseColor("#880E4F")));
         }
-        if (!txtdatanotavailbleper.getText().toString().equals("0.0"))
-        {
+        if (!txtdatanotavailbleper.getText().toString().equals("0.0")) {
             data.add(new ChartData(txtdatanotavailbleper.getText().toString() + "%", dna_per, Color.WHITE, Color.parseColor("#00BFA5")));
         }
-        pie_chart.setChartData(data);
 
+        if (data.isEmpty()) {
+            // Prevent crash by adding a default value or skipping chart
+            data.add(new ChartData("0%", 0f, Color.WHITE, Color.GRAY));
+        }
+
+        pie_chart.setChartData(data);
     }
 
+
     private void findper() {
+        underAge = (float) ((Double.valueOf(txtageunder.getText().toString())/Double.valueOf(txt_totalbmicount.getText().toString())) * 100);
         underwaitper = (float) ((Double.valueOf(txtunderweight.getText().toString())/Double.valueOf(txt_totalbmicount.getText().toString())) * 100);
         normalper = (float) ((Double.valueOf(txtcountnormalbmi.getText().toString())/Double.valueOf(txt_totalbmicount.getText().toString())) * 100);
         overweightper = (float) ((Double.valueOf(txtoverweight.getText().toString())/Double.valueOf(txt_totalbmicount.getText().toString())) * 100);
@@ -148,7 +144,7 @@ public class BMIInterprettionActivity extends AppCompatActivity implements Adapt
         morbidiv_per = (float) ((Double.valueOf(txtmorbidobesityiv.getText().toString())/Double.valueOf(txt_totalbmicount.getText().toString())) * 100);
         dna_per = (float) ((Double.valueOf(txt_datanotavailable.getText().toString())/Double.valueOf(txt_totalbmicount.getText().toString())) * 100);
 
-
+        tvtageunder.setText(String.valueOf(underAge));
         tvtunderweight.setText(String.valueOf(underwaitper));
         tvNormalperbmi.setText(String.valueOf(normalper));
         tvoverweightper.setText(String.valueOf(overweightper));
@@ -163,6 +159,7 @@ public class BMIInterprettionActivity extends AppCompatActivity implements Adapt
     }
 
     private void setcount(final String data1) {
+        txtageunder.setText(String.valueOf(PopulationMedicalModel.getBMI_inter_Count("UnderAge", SharedPreference.get("CAMPID"),data1)));
         txtunderweight.setText(String.valueOf(PopulationMedicalModel.getBMI_inter_Count("Underweight", SharedPreference.get("CAMPID"),data1)));
         txtcountnormalbmi.setText(String.valueOf(PopulationMedicalModel.getBMI_inter_Count("Normal", SharedPreference.get("CAMPID"),data1)));
         txtoverweight.setText(String.valueOf(PopulationMedicalModel.getBMI_inter_Count("Overweight", SharedPreference.get("CAMPID"),data1)));
@@ -179,6 +176,7 @@ public class BMIInterprettionActivity extends AppCompatActivity implements Adapt
     private void init() {
         txtobesegrade2per = findViewById(R.id.txtobesegrade2per);
         pie_chart = findViewById(R.id.pie_chart);
+        txtageunder = findViewById(R.id.txtunderAge);
         txtunderweight = findViewById(R.id.txtunderweight);
         txtcountnormalbmi = findViewById(R.id.txtcountnormalbmi);
         txtoverweight = findViewById(R.id.txtoverweight);
@@ -190,6 +188,7 @@ public class BMIInterprettionActivity extends AppCompatActivity implements Adapt
         txtobesegrade2 = findViewById(R.id.txtobesegrade2);
         txt_datanotavailable = findViewById(R.id.txt_datanotavailable);
 
+        tvtageunder = findViewById(R.id.tvtUnderAge);
         tvtunderweight = findViewById(R.id.tvtunderweight);
         tvNormalperbmi = findViewById(R.id.tvNormalperbmi);
         tvoverweightper = findViewById(R.id.tvoverweightper);
@@ -244,4 +243,8 @@ public class BMIInterprettionActivity extends AppCompatActivity implements Adapt
         // Optional: do nothing
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+    }
 }

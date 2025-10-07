@@ -61,9 +61,7 @@
         <activity
             android:name=".ui.activity.CallToLLEActivity"
             android:exported="false"></activity>
-        <activity
-            android:name=".ui.activity.MultipleCampActivity"
-            android:exported="false" />
+
         <activity
             android:name=".ui.activity.HealthDataActivity"
             android:exported="false"></activity>
@@ -74,18 +72,30 @@
         <activity
             android:name=".ui.activity.AddHouseholdActivity"
             android:exported="false"
+            android:launchMode="singleTask"
             android:windowSoftInputMode="adjustResize|stateHidden"></activity>
 
         <activity
             android:name=".ui.activity.DailyworkPhcPadaActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:launchMode="singleTask"/>
+
         <activity
             android:name=".ui.activity.DashboardActivityOutPro"
             android:exported="false"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask" />
+
+
+        <activity
+            android:name=".ui.activity.MultipleCampActivity"
+            android:exported="false"
+            android:launchMode="singleTask"/>
+
         <activity
             android:name=".ui.activity.ScanQRActivity"
             android:exported="false"></activity>
+
         <activity
             android:name=".ui.activity.SplashActivity"
             android:exported="true">

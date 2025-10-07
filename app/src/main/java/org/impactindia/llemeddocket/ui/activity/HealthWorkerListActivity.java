@@ -88,4 +88,9 @@ public class HealthWorkerListActivity extends AppCompatActivity {
         recycler_healthworker.setAdapter(ashworkerAdapter);
 
     }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+    }
 }

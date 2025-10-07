@@ -178,4 +178,9 @@ public class VisualAcuityReportActivity extends AppCompatActivity implements Ada
     public void onNothingSelected(AdapterView<?> adapterView) {
 
     }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+    }
 }

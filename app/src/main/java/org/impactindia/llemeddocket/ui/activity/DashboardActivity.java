@@ -137,14 +137,11 @@ public class DashboardActivity extends BaseActivity implements View.OnClickListe
             if (camp != null) {
                 String startDateStr = camp.getFromDate();
                 String endDateStr = camp.getToDate();
-//            SimpleDateFormat sdf = new SimpleDateFormat(AttributeSet.Constants.SHORT_DATE_FORMAT);
                 DateTimeFormatter formatter = DateTimeFormatter.ofPattern(AttributeSet.Constants.REVERSE_SHORT_DATE);
                 try {
                     LocalDate endDate = LocalDate.parse(endDateStr, formatter);
                     LocalDate startDate = LocalDate.parse(startDateStr, formatter);
                     LocalDate today = LocalDate.now();
-                /*Date endDate = sdf.parse(endDateStr);
-                Date today = Calendar.getInstance().getTime();*/
                     if (today.isAfter(endDate)) {
                         showNoActiveCampDialog();
                     } else if (today.isBefore(startDate)) {
@@ -161,14 +158,11 @@ public class DashboardActivity extends BaseActivity implements View.OnClickListe
         } else {
             String startDateStr = getApp().getSettings().getCampStartDate();
             String endDateStr = getApp().getSettings().getCampEndDate();
-//            SimpleDateFormat sdf = new SimpleDateFormat(AttributeSet.Constants.SHORT_DATE_FORMAT);
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern(AttributeSet.Constants.REVERSE_SHORT_DATE);
             try {
                 LocalDate endDate = LocalDate.parse(endDateStr, formatter);
                 LocalDate startDate = LocalDate.parse(startDateStr, formatter);
                 LocalDate today = LocalDate.now();
-                /*Date endDate = sdf.parse(endDateStr);
-                Date today = Calendar.getInstance().getTime();*/
                 if (today.isAfter(endDate)) {
                     showCampEndsDialog(camp);
                 } else if (today.isBefore(startDate)) {
@@ -378,11 +372,6 @@ public class DashboardActivity extends BaseActivity implements View.OnClickListe
         builder.show();
     }
 
-    /**
-     * This receiver is registered to receive sync complete event notification
-     * will receive the sync complete event when it happens and perform the task
-     * needed
-     */
     private BroadcastReceiver syncCompleteReceiver = new BroadcastReceiver() {
 
         @Override

@@ -191,4 +191,9 @@ public class GenderReportActivity extends BaseActivity implements AdapterView.On
     @Override
     public void onNothingSelected(AdapterView<?> adapterView) {
     }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+    }
 }

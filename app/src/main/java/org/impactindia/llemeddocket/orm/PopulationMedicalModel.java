@@ -865,38 +865,65 @@ public class  PopulationMedicalModel {
         return mydata1;
     }
 
-    public static int getAgecount(String startage,String endage,String campid,String uid)
-    {
+    public static int getAgecount(String startAge, String endAge, String campId, String uid) {
         open();
-        int mydata1 = 0;
-        String countQuery = "SELECT count(age) as age FROM populationNmedical WHERE (age BETWEEN '" + startage + "' AND  '" + endage + "') AND  campId =  '" + campid + "' AND  userid =  '" + uid + "'";
-        Log.i("ckm=>Agebycount",countQuery+"");
-        Cursor cursor = database.rawQuery(countQuery, null);
-        //Log.i("ckm=>populationCount",cursor+"");
-        if (cursor.getCount() > 0)
-        {
-            cursor.moveToFirst();
-            mydata1 = cursor.getInt(0);
+        int count = 0;
+
+        String query = "SELECT COUNT(*) FROM (" +
+                "SELECT CASE " +
+                "WHEN unit = 'Weeks' THEN age * 1.0 / 52.0 " +
+                "WHEN unit = 'Months' THEN age * 1.0 / 12.0 " +
+                "WHEN unit = 'Days' THEN age * 1.0 / 365.0 " +
+                "ELSE age * 1.0 " +
+                "END AS age_in_years " +
+                "FROM populationNmedical " +
+                "WHERE campId = '" + campId + "' AND userid = '" + uid + "'" +
+                ") AS normalized " +
+                "WHERE age_in_years BETWEEN " + startAge + " AND " + endAge;
+
+        Log.i("ckm=>AgeByCount", query);
+
+        Cursor cursor = database.rawQuery(query, null);
+        if (cursor != null) {
+            if (cursor.moveToFirst()) {
+                count = cursor.getInt(0);
+            }
+            cursor.close();
         }
-        cursor.close();
-        return mydata1;
+
+        return count;
     }
 
-    public static int getAgecountgreaterthan60(String campid,String uid)
-    {
+    /**
+     * Get count of people 60 years and above
+     */
+    public static int getAgecountgreaterthan60(String campId, String uid) {
         open();
-        int mydata1 = 0;
-        String countQuery = "SELECT count(age) as age FROM populationNmedical WHERE (age >= 60) AND  campId =  '" + campid + "' AND  userid =  '" + uid + "' ";
-        Log.i("ckm=>Agebycount",countQuery+"");
-        Cursor cursor = database.rawQuery(countQuery, null);
-        //Log.i("ckm=>populationCount",cursor+"");
-        if (cursor.getCount() > 0)
-        {
-            cursor.moveToFirst();
-            mydata1 = cursor.getInt(0);
+        int count = 0;
+
+        String query = "SELECT COUNT(*) FROM (" +
+                "SELECT CASE " +
+                "WHEN unit = 'Weeks' THEN age * 1.0 / 52.0 " +
+                "WHEN unit = 'Months' THEN age * 1.0 / 12.0 " +
+                "WHEN unit = 'Days' THEN age * 1.0 / 365.0 " +
+                "ELSE age * 1.0 " +
+                "END AS age_in_years " +
+                "FROM populationNmedical " +
+                "WHERE campId = '" + campId + "' AND userid = '" + uid + "'" +
+                ") AS normalized " +
+                "WHERE age_in_years >= 60";
+
+        Log.i("ckm=>AgeByCount60", query);
+
+        Cursor cursor = database.rawQuery(query, null);
+        if (cursor != null) {
+            if (cursor.moveToFirst()) {
+                count = cursor.getInt(0);
+            }
+            cursor.close();
         }
-        cursor.close();
-        return mydata1;
+
+        return count;
     }
 
 
